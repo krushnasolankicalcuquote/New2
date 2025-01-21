@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "fmCnMNXykst1ciVRs5mRE5NQihhbMieZtXtjcPNm5TY=",
+  "Source": "CalcuQuote.API",
+  "BasePath": "_content/CalcuQuote.API",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

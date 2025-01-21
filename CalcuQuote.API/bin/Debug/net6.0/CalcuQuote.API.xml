@@ -1,0 +1,1232 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CalcuQuote.API</name>
+    </assembly>
+    <members>
+        <member name="M:CalcuQuote.API.Controllers.AccountController.IsUserTwoFactorEnabled">
+            <summary>
+            Check User have setup 2-step authentication or not
+            </summary>
+            <returns>Two factor authentication status</returns>
+            <remarks>BY Viral</remarks>
+        </member>
+        <member name="M:CalcuQuote.API.Controllers.AssemblyController.GetAssemblyHeaderInfoForAlternatePartApprove(System.Int64)">
+            <summary>
+            This method is used for alternate part approve link
+            </summary>
+        </member>
+        <member name="T:CalcuQuote.API.Controllers.BaseApiController">
+            <summary>
+            Base Api Controller
+            </summary>
+        </member>
+        <member name="M:CalcuQuote.API.Controllers.BoardCQ.BoardCQController.GetPCBSupplierAndContactFromQuoteCQ">
+            <summary>
+            Below API will call from BoardCQ Service.
+            </summary>
+        </member>
+        <member name="M:CalcuQuote.API.Controllers.ConfigurationController.GetClientConfiguration(System.String)">
+            <summary>
+            Get Single Client Configurations
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:CalcuQuote.API.Controllers.ConfigurationController.DigiKeyReGenerateToken">
+            <summary>
+            DigiKey Re-Generate Token
+            </summary>
+            <returns>Return string with access token and refresh token result.</returns>
+        </member>
+        <member name="M:CalcuQuote.API.Controllers.ConfigurationController.BomAIAPIReGenerateToken(System.String)">
+            <summary>
+            ReGenerate Access and Refresh token for BomAI API
+            </summary>
+            <param name="sourceOfPrice"></param>
+            <returns>Access_Token</returns>
+            <returns>Token_Type</returns>
+            <returns>Expires_In</returns>
+            <returns>Refresh_Token</returns>
+            <returns>Error</returns>
+        </member>
+        <member name="M:CalcuQuote.API.Controllers.ConfigurationController.AgigaAPIReGenerateToken(System.String)">
+            <summary>
+            ReGenerate Access and Refresh token for Agiga API
+            </summary>
+            <param name="sourceOfPrice"></param>
+            <returns>Access_Token</returns>
+            <returns>Refresh_Token</returns>
+            <returns>ExpiresAt</returns>
+            <returns>Error</returns>
+        </member>
+        <member name="M:CalcuQuote.API.Controllers.ConfigurationController.RunOnlyScrubMyBOM(System.Int64)">
+            <summary>
+            Run scrub my bom using assembly id for all line items
+            </summary>
+            <param name="assemblyId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CalcuQuote.API.Controllers.ConfigurationController.GeneralCall">
+            <summary>
+            This Method is for Migration GeneralCall from MasterWizard -> Actions -> Upgrade
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:CalcuQuote.API.Controllers.ConfigurationController.ImportMfgrExcel(Microsoft.AspNetCore.Http.IFormFile)">
+            <summary>
+            Get manufacturers excel data in a script format to insert manufacturers and manufacturer groups
+            </summary>
+            <param name="file">Import an mfgr excel data</param>
+            <returns>Manufacturers excel data in a script format</returns>
+        </member>
+        <member name="M:CalcuQuote.API.Controllers.Configurations.WorkFlowSetupController.CreateUpdateWorkFlow(CalcuQuote.Core.ViewModel.WFMaster)">
+            <summary>
+            
+            </summary>
+            <param name="wfMaster"></param>
+            <returns></returns>
+            
+        </member>
+        <member name="M:CalcuQuote.API.Controllers.ConnectCQ.ConnectCQController.SendConnectCQPartsRequest(CalcuQuote.Core.DataContracts.ConnectCQ.ConnectCQManualPricingTemplateDTO)">
+            <summary>
+            Send mail to supplier for Part sourcing help request
+            </summary>        
+            <returns></returns>
+        </member>
+        <member name="T:CalcuQuote.API.Controllers.CQPriceSelectorController">
+            <summary>
+            CQ Price Selector API Controller
+            </summary>
+        </member>
+        <member name="M:CalcuQuote.API.Controllers.CQPriceSelectorController.GetCQPriceSelectorInitialData(CalcuQuote.Core.ViewModel.WorkFlowInfo)">
+            <summary>
+            When Call CQ Price Selector Is Open
+            </summary>
+            <param name="workFlowInfo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CalcuQuote.API.Controllers.CQPriceSelectorController.GetLineItemIdByQuantityData(System.Int64,System.Int64)">
+            <summary>
+            When CQ Price Selector open then Line Item Id by Data Return and use that in CQ Price Selector Controller.
+            also when call this method is any user new line item go.
+            </summary>
+            <param name="assemblyId"></param>
+            <param name="lineItemId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CalcuQuote.API.Controllers.CQPriceSelectorController.GetUOMData">
+            <summary>
+            UOM and UOM Conversion Related Data
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:CalcuQuote.API.Controllers.HubSpot.HubSpotController.#ctor(CalcuQuote.Core.IBal.IHubSpotBAL)">
+            <summary>
+            
+            </summary>
+            <param name="hubSpotBal"></param>
+        </member>
+        <member name="T:CalcuQuote.API.Controllers.LoginHistoryController">
+            <summary>
+            LoginHistory Controller
+            </summary>
+        </member>
+        <member name="T:CalcuQuote.API.Controllers.PartPricingController">
+            <summary>
+            PartPricing Controller
+            </summary>
+        </member>
+        <member name="T:CalcuQuote.API.Controllers.PricingAPIController">
+            <summary>
+            NRE Controller
+            </summary>
+        </member>
+        <member name="T:CalcuQuote.API.Controllers.PurchaseController">
+            <summary>
+            Purchase Controller
+            </summary>
+        </member>
+        <member name="M:CalcuQuote.API.Controllers.PurchaseController.GetAliveBidStatus(System.Int64)">
+            <summary>
+            Get count of bids which are inprogress/open
+            </summary>
+            <param name="assemblyId"></param>
+            <returns></returns>
+        </member>
+        <member name="T:CalcuQuote.API.Controllers.QuotePackageController">
+            <summary>
+            Quote Package Controller
+            </summary>
+        </member>
+        <member name="T:CalcuQuote.API.Controllers.FileUploadController">
+            <summary>
+            File Upload Controller
+            </summary>
+        </member>
+        <member name="T:CalcuQuote.API.Controllers.ShipMethodController">
+            <summary>
+            ShipMethod Controller
+            </summary>
+        </member>
+        <member name="T:CalcuQuote.API.CQApi.Controllers.CQAssemblyController">
+            <summary>
+            Assembly Controller
+            </summary>
+        </member>
+        <member name="M:CalcuQuote.API.CQApi.Controllers.CQAssemblyController.Lock(CalcuQuote.Core.ViewModel.CQOpenApi.Request.CQAPILockUnlockRequest)">
+            <summary>
+            Lock Assembly
+            </summary>
+        </member>
+        <member name="M:CalcuQuote.API.CQApi.Controllers.CQAssemblyController.Unlock(CalcuQuote.Core.ViewModel.CQOpenApi.Request.CQAPILockUnlockRequest)">
+            <summary>
+            Unlock Assembly
+            </summary>
+        </member>
+        <member name="M:CalcuQuote.API.CQApi.Controllers.CQAssemblyController.UpdateFieldValue(CalcuQuote.Core.ViewModel.CQOpenApi.Request.CQAPIUpdateAssemblyKeyValueRequest)">
+            <summary>
+            Update assembly field value
+            </summary>
+        </member>
+        <member name="M:CalcuQuote.API.CQApi.Controllers.CQAssemblyController.Values(CalcuQuote.Core.ViewModel.CQOpenApi.CQAPIAssemblyValuesRequest)">
+            <summary>
+            Get Assembly Values
+            </summary>
+            <remarks>
+            </remarks>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="T:CalcuQuote.API.CQApi.Controllers.CQBomController">
+            <summary>
+            Bom Controller
+            </summary>
+        </member>
+        <member name="M:CalcuQuote.API.CQApi.Controllers.CQBomController.#ctor(CalcuQuote.Core.IBal.ICQAPIBomBAL,CalcuQuote.Core.IBal.IBomBAL)">
+            <summary>
+            Initializes a new instance of the <see cref="T:CalcuQuote.API.CQApi.Controllers.CQBomController"/> class.
+            </summary>
+            <param name="cqapibomBAL">The cqapi bom bal object</param>
+            <param name="bomBAL">Bom bal object</param>
+        </member>
+        <member name="M:CalcuQuote.API.CQApi.Controllers.CQBomController.Get(System.Int64)">
+            <summary>
+            Get the BOM details using AssemblyId
+            </summary>
+            <param name="assemblyId" example="121">Assembly Id</param>
+            <returns>Get BOM Response</returns>
+        </member>
+        <member name="M:CalcuQuote.API.CQApi.Controllers.CQBomController.Create(CalcuQuote.Core.ViewModel.BOM)">
+            <summary>
+            Submit BOM details
+            </summary>
+        </member>
+        <member name="M:CalcuQuote.API.CQApi.Controllers.CQBomController.Update(CalcuQuote.Core.ViewModel.CQOpenApi.Request.CQAPIUpdateBOMRequest)">
+            <summary>
+            Update the specified BOM
+            </summary>
+        </member>
+        <member name="M:CalcuQuote.API.CQApi.Controllers.CQBomController.OpenAPIUpdateBOM(CalcuQuote.Core.ViewModel.CQOpenApi.Request.CQAPIUpdateBOMRequest)">
+            <summary>
+            Update the specified BOM
+            </summary>
+        </member>
+        <member name="M:CalcuQuote.API.CQApi.Controllers.CQBomController.Delete(CalcuQuote.Core.ViewModel.CQOpenApi.CQAPIDeleteBOMRequest)">
+            <summary>
+            Delete the BOM.
+            </summary>
+        </member>
+        <member name="M:CalcuQuote.API.CQApi.Controllers.CQBomController.UpdateMethodOfSupply(CalcuQuote.Core.ViewModel.CQOpenApi.Request.CQAPIMethodOfSupplyRequest)">
+            <summary>
+            Update Method Of Supply for BOM Lines
+            </summary>
+        </member>
+        <member name="M:CalcuQuote.API.CQApi.Controllers.CQBomController.RunScrubMyBOM(System.Int64)">
+            <summary>
+            Run scrub my bom to populate the part class in the bom.
+            </summary>
+            <param name="assemblyId" example="121">Assembly Id</param>
+        </member>
+        <member name="M:CalcuQuote.API.CQApi.Controllers.CQBomController.ApplyScrubMyBOMSuggestions(CalcuQuote.Core.ViewModel.CQOpenApi.Request.CQAPIApplyScrubMyBOMSuggestionsRequest)">
+            <summary>
+             Apply scrub my bom suggestions to populate the part class in the bom
+            </summary>
+        </member>
+        <member name="M:CalcuQuote.API.CQApi.Controllers.CQBomController.SubmitBOM(CalcuQuote.Core.ViewModel.CQOpenApi.Request.CQAPISubmitBOMRequest)">
+            <summary>
+            Submit bom step for specified assembly.
+            </summary>
+        </member>
+        <member name="M:CalcuQuote.API.CQApi.Controllers.CQBomController.GetPackageQuantityData(System.Int64)">
+            <summary>
+            Gets the Package Quantity Data of Assembly
+            </summary>
+            <param name="assemblyId" example = "121">Assembly Id</param>
+            <returns> Returns package quantity list, http status code and optional message </returns>
+        </member>
+        <member name="M:CalcuQuote.API.CQApi.Controllers.CQBomController.Update(CalcuQuote.Core.ViewModel.CQOpenApi.Request.CQAPIUpdatePackageQuantityRequest)">
+            <summary>
+            Update the specified Package Quantities of Assembly
+            </summary>
+            <returns> Returns http status code and optional message </returns>
+        </member>
+        <member name="T:CalcuQuote.API.CQApi.Controllers.CQAPIChecklistFieldsController">
+            <summary>
+            Checklist Fields Controller
+            </summary>
+        </member>
+        <member name="M:CalcuQuote.API.CQApi.Controllers.CQAPIChecklistFieldsController.GetByJobType(System.String)">
+            <summary>
+            Get the checklist fields by job type
+            </summary>
+            <param name="jobType" example = "Turnkey">Job Type Name</param>
+        </member>
+        <member name="M:CalcuQuote.API.CQApi.Controllers.CQAPIChecklistFieldsController.GetByJobTypes(CalcuQuote.Core.ViewModel.CQOpenApi.Request.CQAPIGetCheckListFieldsRequest)">
+            <summary>
+            Get the Checklist Fields
+            </summary>
+            <param name="request">JobTypes Name</param>
+            <returns></returns>
+        </member>
+        <member name="T:CalcuQuote.API.CQApi.Controllers.CQRfqController">
+            <summary>
+            RFQ Controller
+            </summary>
+        </member>
+        <member name="M:CalcuQuote.API.CQApi.Controllers.CQRfqController.Post(CalcuQuote.Core.ViewModel.CQOpenApi.CQAPIRequestForm)">
+            <summary>
+            Submit RFQ details
+            </summary>
+            <param name="requestForm">The request form</param>
+            <returns> Returns success and message </returns>
+        </member>
+        <member name="M:CalcuQuote.API.CQApi.Controllers.CQRfqController.GetRFQList(CalcuQuote.Core.ViewModel.CQOpenApi.CQAPIRFQListRequest)">
+            <summary>
+            Get RFQ List
+            </summary>
+            <param name="cqAPIRFQListRequest"> RFQ list request </param>
+            <returns> Returns RFQ list, http status code and optional message </returns>
+        </member>
+        <member name="M:CalcuQuote.API.CQApi.Controllers.CQRfqController.Update(CalcuQuote.Core.ViewModel.CQOpenApi.Request.CQAPIUpdateRFQRequest)">
+            <summary>
+            Update properties of a given RFQ
+            </summary>
+            <param name="request"> Update RFQ request </param>
+            <returns> Returns http status code and optional message </returns>
+        </member>
+        <member name="M:CalcuQuote.API.CQApi.Controllers.CQRfqController.CloneRFQ(CalcuQuote.Core.ViewModel.CQOpenApi.Request.CQAPICloneRFQRequest)">
+            <summary>
+            Clone the specified request form
+            </summary>
+            <param name="request">The request form </param>
+            <returns> Rerurns status code </returns>
+        </member>
+        <member name="M:CalcuQuote.API.CQApi.Controllers.CQRfqController.CloneRFQInBackground(CalcuQuote.Core.ViewModel.CQOpenApi.Request.CQAPICloneRFQRequest)">
+            <summary>
+            Clone the specified request form in background
+            </summary>
+            <param name="request">The request form </param>
+            <returns> Rerurns status code </returns>
+        </member>
+        <member name="M:CalcuQuote.API.CQApi.Controllers.CQRfqController.AssemblyStatusUpdate(CalcuQuote.Core.ViewModel.CQOpenApi.CQAPIAssemblyStatusUpdateRequest)">
+            <summary>
+            Assembly Status Update(Marked as sent in case of Won or Lost)
+            </summary>
+            <param name="request"> Assembly status update request </param>
+            <returns> Returns http status code and optional message </returns>
+        </member>
+        <member name="M:CalcuQuote.API.CQApi.Controllers.CQRfqController.UpdateAssemblyNote(CalcuQuote.Core.ViewModel.CQOpenApi.Request.CQAPIUpdateAssemblyNoteRequest)">
+            <summary>
+            Update Assembly Note
+            </summary>
+            <param name="request"> Update assembly note request </param>
+            <returns> Returns http status code and optional message </returns>
+        </member>
+        <member name="M:CalcuQuote.API.CQApi.Controllers.CQRfqController.UpsertRFQChecklist(CalcuQuote.Core.ViewModel.CQOpenApi.Request.UpsertRFQChecklistRequest)">
+            <summary>
+            Update and Insert RFQ Custom Field
+            </summary>
+            <param name="request"> Update/Insert RFQ checklist request </param>
+            <returns> Returns http status code and optional message </returns>
+        </member>
+        <member name="M:CalcuQuote.API.CQApi.Controllers.CQRfqController.GetCurrenciesConversionRates(System.Int32)">
+            <summary>
+            Get the currencies conversion rates by RFQ id
+            </summary>
+            <param name="rfqId"> RFQ Id</param>
+            <returns> Returns RFQ CurrencyConversionRates, http status code and optional message </returns>
+        </member>
+        <member name="M:CalcuQuote.API.CQApi.Controllers.CQAPICostedBomController.#ctor(CalcuQuote.Core.IBal.ICQAPICostedBomBAL)">
+            <summary>
+            Initializes a new instance of the <see cref="T:CalcuQuote.API.CQApi.Controllers.CQAPICostedBomController"/> class.
+            </summary>
+            <param name="cqAPICostedBomBAL">CostedBom bal object</param>
+        </member>
+        <member name="M:CalcuQuote.API.CQApi.Controllers.CQAPICostedBomController.Get(System.Int64)">
+            <summary>
+            Get the Costed BOM by assemblyId.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:CalcuQuote.API.CQApi.Controllers.CQAPICostedBomController.Get(CalcuQuote.Core.ViewModel.CQOpenApi.Request.CQAPICostedBOMRequest)">
+            <summary>
+            Get the Costed BOM by assembly id and Part Type Categories.
+            </summary>
+        </member>
+        <member name="M:CalcuQuote.API.CQApi.Controllers.CQAPICostedBomController.GetCostedBomOriginalCurrency(CalcuQuote.Core.ViewModel.CQOpenApi.CQAPICostedBOMOriginalCurrencyRequest)">
+            <summary>
+            Get the Costed BOM with Original Currency by assembly id and Part Type Categories.
+            </summary>
+        </member>
+        <member name="M:CalcuQuote.API.CQApi.Controllers.CQAPICostedBomController.GetCostedBomAllMPN(CalcuQuote.Core.ViewModel.CQOpenApi.Request.CQAPICostedBOMAllMPNRequest)">
+            <summary>
+            Get the Costed BOM with all MPN by assembly ID and Part Type Categories.
+            </summary>
+        </member>
+        <member name="M:CalcuQuote.API.CQApi.Controllers.CQAPICostedBomController.GetMultiLevelCostemBom(CalcuQuote.Core.ViewModel.CQOpenApi.Request.CQAPIMultiLevelCostedBOMRequest)">
+            <summary>
+            Get the Multi-Level Costed BOM by assembly id.
+            </summary>
+        </member>
+        <member name="M:CalcuQuote.API.CQApi.Controllers.CQAPICurrencyConversionController.CreateCurrencyConversion(CalcuQuote.Core.ViewModel.CQOpenApi.CQAPICurrencyConversion)">
+            <summary>
+            Create currency conversion
+            </summary>
+            <param name="entity"> Currency details </param>
+            <returns> Returns response message </returns>
+        </member>
+        <member name="M:CalcuQuote.API.CQApi.Controllers.CQAPICurrencyConversionController.UpdateCurrencyConversion(CalcuQuote.Core.ViewModel.CQOpenApi.CQAPIUpdateCurrencyConversion)">
+            <summary>
+            Update currency conversion
+            </summary>
+            <param name="entity"> Currency details </param>
+            <returns> Returns response message </returns>
+        </member>
+        <member name="M:CalcuQuote.API.CQApi.Controllers.CQAPICurrencyConversionController.GetAll(System.String,System.String,System.Boolean)">
+            <summary>
+            Get currency conversion
+            </summary>
+            <param name="fromCurrency" example = "USD"> From Currency </param>
+            <param name="toCurrency" example = "EUR"> To Currency </param>
+            <param name="active" example = "true"> Active </param>
+            <returns> Currency Conversion List </returns>
+        </member>
+        <member name="M:CalcuQuote.API.CQApi.Controllers.CQAPIGetConfigIdsController.GetAllJobTypeId">
+            <summary>
+            Get all the active job type
+            </summary>
+            <returns> Job type list </returns>
+        </member>
+        <member name="M:CalcuQuote.API.CQApi.Controllers.CQAPIGetConfigIdsController.GetAllOrderTypeId">
+            <summary>
+            Get all the order type
+            </summary>
+            <returns> Order type list </returns>
+        </member>
+        <member name="M:CalcuQuote.API.CQApi.Controllers.CQAPIGetConfigIdsController.GetAllQuoteTypeId">
+            <summary>
+            Get all the quote type
+            </summary>
+            <returns> Quote type list </returns>
+        </member>
+        <member name="M:CalcuQuote.API.CQApi.Controllers.CQAPIGetConfigIdsController.GetAllCustomerId">
+            <summary>
+            Get all the customer
+            </summary>
+            <returns> Customer list </returns>
+        </member>
+        <member name="M:CalcuQuote.API.CQApi.Controllers.CQAPIGetConfigIdsController.GetAllCustomerContactId">
+            <summary>
+            Get all the customer contact
+            </summary>
+            <returns> Customer contact list </returns>
+        </member>
+        <member name="M:CalcuQuote.API.CQApi.Controllers.CQAPIGetConfigIdsController.GetAllPartClassId">
+            <summary>
+            Get all the part class
+            </summary>
+            <returns> Part class list </returns>
+        </member>
+        <member name="M:CalcuQuote.API.CQApi.Controllers.CQAPIGetConfigIdsController.GetAllPartTypeId">
+            <summary>
+            Get all the part type
+            </summary>
+            <returns> Part type list </returns>
+        </member>
+        <member name="M:CalcuQuote.API.CQApi.Controllers.CQAPIGetConfigIdsController.GetAllUOMId">
+            <summary>
+            Get all the UOM
+            </summary>
+            <returns> UOM list </returns>
+        </member>
+        <member name="M:CalcuQuote.API.CQApi.Controllers.CQAPIGetConfigIdsController.GetAllSupplierContactId">
+            <summary>
+            Get all the supplier contact
+            </summary>
+            <returns> Supplier contact list </returns>
+        </member>
+        <member name="M:CalcuQuote.API.CQApi.Controllers.CQAPIGetConfigIdsController.GetAllConfiguration">
+            <summary>
+            Get all the configuration
+            </summary>
+            <returns> Configuration list </returns>
+        </member>
+        <member name="M:CalcuQuote.API.CQApi.Controllers.CQAPIGetConfigIdsController.GetKeyConfiguration(System.String)">
+            <summary>
+            Get configuration by keyname
+            </summary>
+            <param name="KeyName"> Configuration key name </param>
+            <returns> Configuration list by keyname </returns>
+        </member>
+        <member name="M:CalcuQuote.API.CQApi.Controllers.CQAPIGetConfigIdsController.GetFeatureByName(System.String)">
+            <summary>
+            Get feature by keyname
+            </summary>
+            <param name="KeyName"> Feature name </param>
+            <returns> Feature list by keyname </returns>
+        </member>
+        <member name="M:CalcuQuote.API.CQApi.Controllers.CQAPIGetConfigIdsController.GetAllPartClassPartType">
+            <summary>
+            Get the part class part type
+            </summary>
+            <returns> Part class and part type list </returns>
+        </member>
+        <member name="T:CalcuQuote.API.CQApi.Controllers.CQLaborController">
+            <summary>
+            Labor Controller
+            </summary>
+        </member>
+        <member name="M:CalcuQuote.API.CQApi.Controllers.CQLaborController.GetLaborQuestions">
+            <summary>
+            Get Labor Questions
+            </summary>
+            <returns> Returns labor questions list, http status code and optional message </returns>
+        </member>
+        <member name="M:CalcuQuote.API.CQApi.Controllers.CQLaborController.GetAll(CalcuQuote.Core.ViewModel.CQOpenApi.Request.CQAPIGetLaborRequest)">
+            <summary>
+            Get Labor data of assembly
+            </summary>
+            <param name = "request"> Get labor request</param>
+            <returns> Returns labor details, http status code and optional message </returns>
+        </member>
+        <member name="M:CalcuQuote.API.CQApi.Controllers.CQLaborController.CreateLabor(CalcuQuote.Core.ViewModel.CQOpenApi.Request.CQAPILaborSubmitRequest)">
+            <summary>
+            Create assembly labor activities
+            </summary>
+            <param name = "request"> Labor submit request</param>
+            <returns> Returns http status code and optional message </returns>
+        </member>
+        <member name="M:CalcuQuote.API.CQApi.Controllers.CQLaborController.UpdateLabor(CalcuQuote.Core.ViewModel.CQOpenApi.Request.CQAPIUpdateLaborRequest)">
+            <summary>
+            Update assembly labor activities
+            </summary>
+            <param name = "request"> Update labor request </param>
+            <returns> Returns http status code and optional message </returns>
+        </member>
+        <member name="M:CalcuQuote.API.CQApi.Controllers.CQLaborController.DeleteLabor(CalcuQuote.Core.ViewModel.CQOpenApi.Request.CQAPIDeleteLaborRequest)">
+            <summary>
+            Delete assembly labor activities
+            </summary>
+            <param name = "request"> Delete labor request </param>
+            <returns> Returns http status code and optional message </returns>
+        </member>
+        <member name="M:CalcuQuote.API.CQApi.Controllers.CQLaborController.GetLaborActivitiesWithCalculatedDriver(CalcuQuote.Core.ViewModel.CQOpenApi.CQAPIGetLaborActivitiesRequest)">
+            <summary>
+            Get Labor Activities from configuration with calculated driver count
+            </summary>
+            <param name = "request"> Get labor activities request</param>
+            <returns> Returns labor activites list, http status code and optional message </returns>
+        </member>
+        <member name="M:CalcuQuote.API.CQApi.Controllers.CQLineItemController.Delete(CalcuQuote.Core.ViewModel.CQOpenApi.Request.CQApiDeleteLineItemRequest)">
+            <summary>
+            Delete LineItem from BOM.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:CalcuQuote.API.CQApi.Controllers.CQNREController">
+            <summary>
+            NRE Controller
+            </summary>
+        </member>
+        <member name="M:CalcuQuote.API.CQApi.Controllers.CQNREController.Create(System.String,CalcuQuote.Core.ViewModel.CQOpenApi.Request.CQAPICreateNRERequest_V1_1)">
+             <summary>
+             Create Assembly NRE Data.
+             </summary>
+            <remarks>
+             Base Version Schema:
+            
+                 POST /api/OpenAPI/NRE/Create
+                 {
+                     "UserId": "string",
+                     "AssemblyId": 0,
+                     "NREId": 0,
+                     "Charge": 0,
+                     "Description": "string",
+                     "Manufacturer": "string",
+                     "MPN": "string",
+                     "NREName": "string",
+                     "StandardNreChargeOption": "string"
+                 }
+            
+             Version 1.1 Schema:
+            
+                 POST /api/OpenAPI/NRE/Create
+                 {
+                     "CurrencyCharge": 0,
+                     "Currency": "string",
+                     "UserId": "string",
+                     "AssemblyId": 0,
+                     "NREId": 0,
+                     "Description": "string",
+                     "Manufacturer": "string",
+                     "MPN": "string",
+                     "NREName": "string",
+                     "StandardNreChargeOption": "string"
+                 }
+            
+             </remarks>
+        </member>
+        <member name="M:CalcuQuote.API.CQApi.Controllers.CQNREController.Update(CalcuQuote.Core.ViewModel.CQOpenApi.Request.CQAPIUpdateNRERequest)">
+            <summary>
+            Update Assembly NRE Data.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:CalcuQuote.API.CQApi.Controllers.CQNREController.Delete(CalcuQuote.Core.ViewModel.CQOpenApi.Request.CQAPIDeleteNRERequest)">
+            <summary>
+            Delete Assembly NRE Data.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:CalcuQuote.API.CQApi.Controllers.CQNREController.GetAll(CalcuQuote.Core.ViewModel.CQOpenApi.Request.CQAPIGetNRERequest)">
+            <summary>
+            Get all Assembly NRE Data
+            </summary>
+        </member>
+        <member name="M:CalcuQuote.API.CQApi.Controllers.CQPartNumberController.GetPartNumberList(CalcuQuote.Core.ViewModel.CQOpenApi.Request.CQAPIGetPartNumberListRequest)">
+            <summary>
+            Get Part Number List
+            </summary>
+            <param name = "request"> Get part number list request </param>
+            <returns> Returns Part number list, http status code and optional message </returns>
+        </member>
+        <member name="M:CalcuQuote.API.CQApi.Controllers.CQPartNumberController.AddAlternateParts(CalcuQuote.Core.ViewModel.CQOpenApi.Request.CQAPIAddAlternatePartsRequest)">
+            <summary>
+            Add Alternate Parts
+            </summary>
+            <param name = "request"> Add alternate parts request </param>
+            <returns> Returns http status code and optional message </returns>
+        </member>
+        <member name="M:CalcuQuote.API.CQApi.Controllers.CQPartNumberController.CETECUpdatePartNumbers(CalcuQuote.Core.ViewModel.CQOpenApi.Request.CQAPICETECUpdatePartNumbersRequest)">
+            <summary>
+            CETECUpdatePartNumbers
+            </summary>
+            <param name = "request"> CETEC Update Part Numbers request</param>
+            <returns> Returns http status code and optional message </returns>
+        </member>
+        <member name="T:CalcuQuote.API.CQApi.Controllers.CQPortCQController">
+            <summary>
+            PortCQ Configurations Controller
+            </summary>
+        </member>
+        <member name="M:CalcuQuote.API.CQApi.Controllers.CQPortCQController.GetDefaultConfigurations(System.String)">
+            <summary>
+            Get the default PortCQ configuration used to create the RFQ
+            </summary>
+            <param name="jobType" example = "Turnkey">Job Type Name</param>
+            <returns></returns>
+        </member>
+        <member name="T:CalcuQuote.API.CQApi.Controllers.CQPurchaseController">
+            <summary>
+            Purchase Controller
+            </summary>
+        </member>
+        <member name="M:CalcuQuote.API.CQApi.Controllers.CQPurchaseController.GetPurchaseData(CalcuQuote.Core.ViewModel.CQOpenApi.Request.CQAPIGetPurchaseDataRequest)">
+            <summary>
+            Gets the Purchase data with pricing information for specified assembly
+            </summary>
+            <param name="request"> Purchase data request </param>
+            <returns> Returns purchase lines, http status code and optional message </returns>
+        </member>
+        <member name="M:CalcuQuote.API.CQApi.Controllers.CQPurchaseController.SubmitPurchase(CalcuQuote.Core.ViewModel.CQOpenApi.Request.CQAPISubmitPurchaseRequest)">
+            <summary>
+            Submit material step for specified assembly
+            </summary>
+            <param name="request"> Submit purchase request </param>
+            <returns> Returns http status code and optional message </returns>
+        </member>
+        <member name="M:CalcuQuote.API.CQApi.Controllers.CQPurchaseController.ClearPriceSelection(CalcuQuote.Core.ViewModel.CQOpenApi.Request.CQAPIClearPriceSelectionRequest)">
+            <summary>
+            Clear Price Selection
+            </summary>
+            <param name="request"> Clear price selection request </param>
+            <returns> Returns http status code and optional message </returns>
+        </member>
+        <member name="M:CalcuQuote.API.CQApi.Controllers.CQPurchaseController.GetConsolidatedBom(System.Int64)">
+            <summary>
+            Gets the Consolidated BOM.
+            </summary>
+            <param name="assemblyId" example = "121">Assembly Id</param>
+            <returns> Returns consolidated BOM, http status code and optional message </returns>
+        </member>
+        <member name="T:CalcuQuote.API.CQApi.Controllers.CQQuantityController">
+            <summary>
+            Quantity Controller
+            </summary>
+        </member>
+        <member name="M:CalcuQuote.API.CQApi.Controllers.CQQuantityController.GetQuantityData(System.Int64)">
+            <summary>
+            Gets the Quantity Data of Assembly
+            </summary>
+            <param name="assemblyId" example = "121">Assembly Id</param>
+            <returns> Returns quantity list, http status code and optional message </returns>
+        </member>
+        <member name="M:CalcuQuote.API.CQApi.Controllers.CQQuantityController.Delete(CalcuQuote.Core.ViewModel.CQOpenApi.Request.CQAPIDeleteQuantityRequest)">
+            <summary>
+            Delete RFQ quantity
+            </summary>
+            <param name="request"> Delete quantity request </param>
+            <returns> Returns http status code and optional message </returns>
+        </member>
+        <member name="T:CalcuQuote.API.CQApi.Controllers.CQReportsController">
+            <summary>
+            Report Controller
+            </summary>
+        </member>
+        <member name="M:CalcuQuote.API.CQApi.Controllers.CQReportsController.GetSummaryReport(CalcuQuote.Core.ViewModel.CQOpenApi.Request.CQAPIGetSummaryReportRequest)">
+            <summary>
+            Get Summary report in Excel or PDF
+            </summary>
+            <param name="request">Summary report request</param>
+            <returns>Summary report in Excel or PDF</returns>
+        </member>
+        <member name="M:CalcuQuote.API.CQApi.Controllers.CQReportsController.GetQuoteReport(CalcuQuote.Core.ViewModel.CQOpenApi.Request.CQAPIGetQuoteReportRequest)">
+            <summary>
+            Get Quote report in Excel or PDF
+            </summary>
+            <param name="request">Quote report request</param>
+            <returns>Quote report in Excel or PDF</returns>
+        </member>
+        <member name="T:CalcuQuote.API.CQApi.Controllers.CQSummaryController">
+            <summary>
+            Summary Controller
+            </summary>
+        </member>
+        <member name="M:CalcuQuote.API.CQApi.Controllers.CQSummaryController.GetSummary(System.Int64)">
+            <summary>
+            Get the Summary Data
+            </summary>
+            <param name="assemblyId" example = "121">Assembly Id</param>
+            <returns></returns>
+        </member>
+        <member name="M:CalcuQuote.API.CQApi.Controllers.CQSummaryController.GetOpenAPISummary(System.Int64)">
+            <summary>
+            Get the Summary Data
+            </summary>
+            <param name="assemblyId" example = "121">Assembly Id</param>
+            <returns></returns>
+        </member>
+        <member name="M:CalcuQuote.API.CQApi.Controllers.CQSummaryController.GetAssemblySummary(CalcuQuote.Core.ViewModel.CQOpenApi.Request.CQAPIGetAssemblySummaryRequest)">
+            <summary>
+            Get the Summary Data
+            </summary>
+        </member>
+        <member name="M:CalcuQuote.API.CQApi.Controllers.CQSummaryController.UpdateSummary(CalcuQuote.Core.ViewModel.CQOpenApi.CQAPISummaryRequest)">
+            <summary>
+            Update the Summary Data
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:CalcuQuote.API.CQApi.Controllers.CQSummaryController.UpdateOpenAPISummary(CalcuQuote.Core.ViewModel.CQOpenApi.CQAPISummaryRequest)">
+            <summary>
+            Update the Summary Data
+            </summary>
+        </member>
+        <member name="M:CalcuQuote.API.CQApi.Controllers.CQSummaryController.UpsertMiscellaneous(CalcuQuote.Core.ViewModel.CQOpenApi.Request.CQAPIUpsertMiscellaneousRequest)">
+            <summary>
+            Insert/Update Summary miscellaneous
+            </summary>
+        </member>
+        <member name="M:CalcuQuote.API.CQApi.Controllers.CQSummaryController.DeleteMiscellaneous(CalcuQuote.Core.ViewModel.CQOpenApi.Request.CQAPIDeleteMiscellaneousRequest)">
+            <summary>
+            Delete Summary miscellaneous.
+            </summary>
+            <param name="Request">Request to delete summary miscellaneous.</param>
+            <returns></returns>
+        </member>
+        <member name="M:CalcuQuote.API.CQApi.Controllers.CQSummaryController.ChangeExcessType(CalcuQuote.Core.ViewModel.CQOpenApi.Request.CQAPIChangeExcessTypeRequest)">
+            <summary>
+            Change the excess type of material
+            </summary>
+        </member>
+        <member name="M:CalcuQuote.API.CQApi.Controllers.CQSummaryController.Submit(CalcuQuote.Core.ViewModel.CQOpenApi.Request.CQAPISubmitSummaryRequest)">
+            <summary>
+            Submit summary details
+            </summary>
+        </member>
+        <member name="M:CalcuQuote.API.CQApi.Controllers.CQSummaryController.PublishQuote(CalcuQuote.Core.ViewModel.CQOpenApi.Request.CQAPIPublishQuoteRequest)">
+            <summary>
+            Publish Quote(Remove Hold and Publish)
+            </summary>
+        </member>
+        <member name="M:CalcuQuote.API.CQApi.Controllers.CQSummaryController.UpdateSummaryTurnTimes(CalcuQuote.Core.ViewModel.CQOpenApi.Request.CQAPIUpdateSummaryTurnTimesRequest)">
+            <summary>
+            Update Summary TurnTimes or TimeUOMs
+            </summary>
+        </member>
+        <member name="M:CalcuQuote.API.CQApi.Controllers.CQAPISupplierController.GetAllSupplier">
+            <summary>
+            Get active supplier list
+            </summary>
+            <returns> List of suppliers </returns>
+        </member>
+        <member name="M:CalcuQuote.API.CQApi.Controllers.CQAPISupplierController.SupplierByName(System.String)">
+            <summary>
+            Get active supplier by supplier name
+            </summary>
+            <param name="SupplierName"> Supplier name </param>
+            <returns> List of suppliers by supplier name </returns>
+        </member>
+        <member name="M:CalcuQuote.API.CQApi.Controllers.CQAPISupplierController.SupplierCreate(System.String)">
+            <summary>
+            Create the supplier
+            </summary>
+            <param name="SupplierName"> Supplier name </param>
+            <returns> Returns http status code and optional message </returns>
+        </member>
+        <member name="M:CalcuQuote.API.CQApi.Controllers.CQTurnTimeController.Delete(CalcuQuote.Core.ViewModel.CQOpenApi.Request.CQAPIDeleteTurnTimeRequest)">
+            <summary>
+            Delete TurnTime Data.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:CalcuQuote.API.CQApi.Controllers.CQAutoSelectController.GetCriterias">
+            <summary>
+            Get autoselect criterias for pricing
+            </summary>
+        </member>
+        <member name="M:CalcuQuote.API.CQApi.Controllers.CQAutoSelectController.Prices(CalcuQuote.Core.ViewModel.CQOpenApi.CQAPIAutoSelectPricesRequest)">
+            <summary>
+            Run Autoselect for pricing selection
+            </summary>
+        </member>
+        <member name="M:CalcuQuote.API.CQApi.Controllers.CQAutoSelectController.GetAutoSelectStatus(System.Int64)">
+            <summary>
+            Get the auto select status for pricing.
+            </summary>
+            <param name="assemblyId" example = "121">Assembly Id</param>
+        </member>
+        <member name="T:CalcuQuote.API.CQApi.Controllers.CQCustomerContactController">
+            <summary>
+            CustomerContact Controller
+            </summary>
+        </member>
+        <member name="M:CalcuQuote.API.CQApi.Controllers.CQCustomerContactController.#ctor(CalcuQuote.Core.IBal.ICQAPICustomerBAL)">
+            <summary>
+            Initializes a new instance of the <see cref="T:CalcuQuote.API.CQApi.Controllers.CQCustomerContactController"/> class.
+            </summary>
+            <param name="cQAPICustomerBAL">The cq API Customer bal.</param>
+        </member>
+        <member name="M:CalcuQuote.API.CQApi.Controllers.CQCustomerContactController.GetByEmailId(System.String)">
+            <summary>
+            Get customer contacts
+            </summary>
+            <param name="emailId" example = "test@gmail.com">Customer Contact Email Id</param>
+        </member>
+        <member name="M:CalcuQuote.API.CQApi.Controllers.CQCustomerContactController.Post(CalcuQuote.Core.ViewModel.CQOpenApi.CQOpenAPICustomerContact)">
+            <summary>
+            Submit customer contact details
+            </summary>
+        </member>
+        <member name="M:CalcuQuote.API.CQApi.Controllers.CQCustomerContactController.UpdateCustomerContact(CalcuQuote.Core.ViewModel.CQOpenApi.CQOpenAPICustomerContact)">
+            <summary>
+            Update customer contact details
+            </summary>
+        </member>
+        <member name="T:CalcuQuote.API.CQApi.Controllers.CQCustomerController">
+            <summary>
+            Customer Controller
+            </summary>
+        </member>
+        <member name="M:CalcuQuote.API.CQApi.Controllers.CQCustomerController.#ctor(CalcuQuote.Core.IBal.ICQAPICustomerBAL)">
+            <summary>
+            Initializes a new instance of the <see cref="T:CalcuQuote.API.CQApi.Controllers.CQCustomerController"/> class.
+            </summary>
+            <param name="cQAPICustomerBAL">The cq API Customer bal.</param>
+        </member>
+        <member name="M:CalcuQuote.API.CQApi.Controllers.CQCustomerController.Post(CalcuQuote.Core.ViewModel.CQOpenApi.CQOpenAPICustomer)">
+            <summary>
+            Create customer
+            </summary>
+            <param name="customer">Customer details</param>
+            <returns> Returns success and message </returns>
+        </member>
+        <member name="M:CalcuQuote.API.CQApi.Controllers.CQCustomerController.UpdateCustomer(CalcuQuote.Core.ViewModel.CQOpenApi.CQOpenAPIUpdateCustomer)">
+            <summary>
+            Update customer
+            </summary>
+            <param name="customer"> Customer details </param>
+            <returns> Returns http status code and optional message </returns>
+        </member>
+        <member name="M:CalcuQuote.API.CQApi.Controllers.CQCustomerController.GetAllCustomer">
+            <summary>
+            Get active customers
+            </summary>
+            <returns> Customer list </returns>
+        </member>
+        <member name="M:CalcuQuote.API.CQApi.Controllers.CQDocumentController.UploadAssemblyDocument(System.Int64,Microsoft.AspNetCore.Http.IFormFile)">
+            <summary>
+            Upload Assembly Document
+            </summary>
+            <param name="assemblyId" example="121"> Assembly ID </param>
+            <param name="document"> Document </param>
+            <returns> Returns http status code and optional message </returns>
+        </member>
+        <member name="M:CalcuQuote.API.CQApi.Controllers.CQDocumentController.GetAll(CalcuQuote.Core.ViewModel.CQOpenApi.Request.CQAPIGetAssemblyDocumentRequest)">
+            <summary>
+            Get Assembly Document List
+            </summary>
+            <param name="request"> Assembly document request </param>
+            <returns> Returns assembly documents </returns>
+        </member>
+        <member name="M:CalcuQuote.API.CQApi.Controllers.CQDocumentController.Delete(CalcuQuote.Core.ViewModel.CQOpenApi.Request.CQAPIDeleteAssemblyDocumentRequest)">
+            <summary>
+            Delete Assembly Document
+            </summary>
+            <param name="request"> Delete assembly document request </param>
+            <returns> Returns http status code and optional message </returns>
+        </member>
+        <member name="M:CalcuQuote.API.CQApi.Controllers.CQDocumentController.GeneratePresignedURLForDocument(CalcuQuote.Core.ViewModel.CQOpenApi.Request.CQAPIGeneratePresignedURLRequest)">
+            <summary>
+            Generate Presigned URL For Document
+            </summary>
+            <param name="request"> Generate presigned URL request </param>
+            <returns> Returns Presigned URL list, http status code and optional message </returns>
+        </member>
+        <member name="M:CalcuQuote.API.CQApi.Controllers.CQDocumentController.InsertDocuments(CalcuQuote.Core.ViewModel.CQOpenApi.Request.CQAPIInsertDocumentRequest)">
+            <summary>
+             Insert Document Detail
+            </summary>
+            <param name="request"> Insert document request </param>
+            <returns> Returns http status code and optional message </returns>
+        </member>
+        <member name="T:CalcuQuote.API.CQApi.Controllers.CQImportWidgetController">
+            <summary>
+            Import Widget Controller
+            </summary>
+        </member>
+        <member name="M:CalcuQuote.API.CQApi.Controllers.CQImportWidgetController.SubmitBOM(CalcuQuote.Core.ViewModel.CQOpenApi.Request.CQAPIWidgetSubmitBOMRequest)">
+            <summary>
+            Import the specified BOM Lines using Import Widget model.
+            </summary>
+            <param name = "request"> Import BOM lines request </param>
+            <returns> Returns BOM Id, http status code and message </returns>
+        </member>
+        <member name="M:CalcuQuote.API.CQApi.Controllers.CQImportWidgetController.GetPreferredManufacturerList">
+            <summary>
+            Get preferred manufacturer list from configuration.
+            </summary>
+        </member>
+        <member name="M:CalcuQuote.API.CQApi.Controllers.CQImportWidgetController.GetConfigurations(System.Collections.Generic.List{System.String})">
+            <summary>
+            Get Configurations.
+            </summary>
+        </member>
+        <member name="M:CalcuQuote.API.CQApi.Controllers.CQImportWidgetController.SearchDataSourceByMPNs(CalcuQuote.Core.ViewModel.SearchDataSourceByMPNs)">
+            <summary>
+            Search DataSource By MPNs
+            </summary>
+        </member>
+        <member name="T:CalcuQuote.API.CQApi.Controllers.CQMaterialCostingController">
+            <summary>
+            Material Costing Controller
+            </summary>
+        </member>
+        <member name="M:CalcuQuote.API.CQApi.Controllers.CQMaterialCostingController.GetExceptions(CalcuQuote.Core.ViewModel.CQOpenApi.Request.CQAPIGetMaterialExceptionRequest)">
+            <summary>
+            Get material exceptions details for Assembly
+            </summary>
+            <param name = "request"> Material exceptions details for assembly </param>
+            <returns> Material exceptions </returns>
+        </member>
+        <member name="M:CalcuQuote.API.CQApi.Controllers.CQMaterialCostingController.GetExceptionsDetail(CalcuQuote.Core.ViewModel.CQOpenApi.Request.CQAPIGetMaterialExceptionRequest)">
+            <summary>
+            Get material exceptions details for HTML Report
+            </summary>
+            <param name = "request"> Material exceptions details for HTML Report </param>
+            <returns> Material exceptions For HTML Report</returns>
+        </member>
+        <member name="M:CalcuQuote.API.CQApi.Controllers.CQPCBController.GetPCBPrice(CalcuQuote.Core.ViewModel.CQOpenApi.Request.CQAPIGetPCBCostRequest)">
+            <summary>
+            Get PCB Pricing List
+            </summary>
+            <param name="request"> PCB cost request </param>
+            <returns> Returns PCB pricing, http status code and optional message </returns>
+        </member>
+        <member name="M:CalcuQuote.API.CQApi.Controllers.CQPCBController.GetPCBQuestions">
+            <summary>
+            Get PCB Questions Data
+            </summary>
+            <returns> Returns PCB questions list, http status code and optional message </returns>
+        </member>
+        <member name="M:CalcuQuote.API.CQApi.Controllers.CQPCBController.ClearPCBPricing(CalcuQuote.Core.ViewModel.CQOpenApi.Request.CQAPIClearPCBPricingRequest)">
+            <summary>
+            Clear PCB Price
+            </summary>
+            <param name="request"> Clear PCB pricing request </param>
+            <returns> Returns http status code and optional message </returns>
+        </member>
+        <member name="M:CalcuQuote.API.CQApi.Controllers.CQPCBController.SubmitAnswers(CalcuQuote.Core.ViewModel.CQOpenApi.Request.CQAPISubmitPCBAnswersRequest)">
+            <summary>
+            Submit PCB answers for BOM Lines
+            </summary>
+            <param name="request"> Submit PCB answers request </param>
+            <returns> Returns http status code and optional message </returns>
+        </member>
+        <member name="M:CalcuQuote.API.CQApi.Controllers.CQPCBController.SelectPricing(CalcuQuote.Core.ViewModel.CQOpenApi.Request.CQAPISelectPCBPricingRequest)">
+            <summary>
+            Select PCB Pricing
+            </summary>
+            <param name="request"> Select PCB pricing request </param>
+            <returns> Returns http status code and optional message </returns>
+        </member>
+        <member name="M:CalcuQuote.API.CQApi.Controllers.CQPCBController.SubmitPCB(CalcuQuote.Core.ViewModel.CQOpenApi.Request.CQAPISubmitPCBRequest)">
+            <summary>
+            PCB details for assembly
+            </summary>
+            <param name="request"> Submit PCB request </param>
+            <returns> Returns http status code and optional message </returns>
+        </member>
+        <member name="M:CalcuQuote.API.CQApi.Controllers.CQPCBController.NoBid(CalcuQuote.Core.ViewModel.CQOpenApi.Request.CQAPINoBidPCBRequest)">
+            <summary>
+            No-Bid for PCB Lines
+            </summary>
+            <param name="request"> No Bid PCB request </param>
+            <returns> Returns http status code and optional message </returns>
+        </member>
+        <member name="M:CalcuQuote.API.CQApi.Controllers.CQPCBController.UpdatePricing(CalcuQuote.Core.ViewModel.CQOpenApi.Request.CQAPIUpdatePCBPricingRequest)">
+            <summary>
+            Update pricing for PCB
+            </summary>
+            <param name="request"> Update PCB pricing request </param>
+            <returns> Returns pricing, pricing status list, http status code and optional message </returns>
+        </member>
+        <member name="M:CalcuQuote.API.CQApi.Controllers.CQPCBController.GetSavedPCBAnswer(CalcuQuote.Core.ViewModel.CQOpenApi.Request.CQAPIGetSavedPCBAnswerRequest)">
+            <summary>
+            Get saved PCB answers
+            </summary>
+            <param name="request"> Get saved PCB answer request </param>
+            <returns> Returns PCB Answer List, http status code and optional message </returns>
+        </member>
+        <member name="M:CalcuQuote.API.CQApi.Controllers.CQPCBController.AddManualPrice(CalcuQuote.Core.ViewModel.CQOpenApi.Request.CQAPIAddManualPCBPriceRequest)">
+            <summary>
+            Add PCB Manual Price
+            </summary>
+            <param name="request"> Add manual PCB price request </param>
+            <returns> Returns http status code and optional message </returns>
+        </member>
+        <member name="M:CalcuQuote.API.CQApi.Controllers.CQPCBController.GetPCBTurnTime(System.Int64,System.Nullable{System.Int64})">
+            <summary>
+            Get all PCB TurnTime for assembly or PCB TurnTime by line Item
+            </summary>
+            <param name="assemblyId" example="121">Assembly Id</param>
+            <param name="lineItemId" example="111">LineItem Id</param>
+            <returns> Returns PCB Turntime list, http status code and optional message </returns>
+        </member>
+        <member name="M:CalcuQuote.API.CQApi.Controllers.CQPCBController.UpdatePCBTurnTime(CalcuQuote.Core.ViewModel.CQOpenApi.Request.CQAPIUpdatePCBTurnTimeRequest)">
+            <summary>
+            Update PCB Turn Time
+            </summary>
+            <param name="pcbTurnTimeRequest"> PCB TurnTime request </param>
+            <returns> Returns http status code and optional message </returns>
+        </member>
+        <member name="T:CalcuQuote.API.CQApi.Controllers.CQPricingController">
+            <summary>
+            Pricing Controller
+            </summary>
+        </member>
+        <member name="M:CalcuQuote.API.CQApi.Controllers.CQPricingController.UpdatePricing(CalcuQuote.Core.ViewModel.CQOpenApi.CQAPIPricingRequest)">
+            <summary>
+            Update pricing for line items.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:CalcuQuote.API.CQApi.Controllers.CQPricingController.AddManualPrice(CalcuQuote.Core.ViewModel.CQOpenApi.Request.CQAPIAddManualPriceRequest)">
+            <summary>
+            Add a Manual Price
+            </summary>
+        </member>
+        <member name="M:CalcuQuote.API.CQApi.Controllers.CQPricingController.AddManualPriceV2(CalcuQuote.Core.ViewModel.CQOpenApi.Request.CQAPIAddManualPriceRequest)">
+            <summary>
+            Add a Manual Price
+            </summary>
+        </member>
+        <member name="M:CalcuQuote.API.CQApi.Controllers.CQPricingController.NoBidPrice(CalcuQuote.Core.ViewModel.CQOpenApi.Request.CQAPINoBidLinesRequest)">
+            <summary>
+            Mark lines as No Bid 
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:CalcuQuote.API.CQApi.Controllers.CQPricingController.Get(CalcuQuote.Core.ViewModel.CQOpenApi.Request.CQAPIGetPricingRequest)">
+            <summary>
+            Get a Pricing List
+            </summary>
+        </member>
+        <member name="M:CalcuQuote.API.CQApi.Controllers.CQPricingController.GetPricingStatus(System.Int64)">
+            <summary>
+            Get a pricing status
+            </summary>
+            <param name="assemblyId" example = "121">Assembly Id</param>
+            <returns></returns>
+        </member>
+        <member name="M:CalcuQuote.API.CQApi.Controllers.CQRfqReferenceController.GetPartNumberRfqRef(CalcuQuote.Core.ViewModel.PricingRequestModel)">
+            <summary>
+            Get the Quote reference data
+            </summary>
+        </member>
+        <member name="M:CalcuQuote.API.CQApi.Controllers.CQRfqReferenceController.GetMpnQuoteHistory(CalcuQuote.Core.ViewModel.CQOpenApi.Request.CQAPIGetMpnQuoteHistoryRequest)">
+            <summary>
+            Get the Quote history data by MPN
+            </summary>
+        </member>
+        <member name="M:CalcuQuote.API.CQApi.Controllers.CQRfqReferenceController.GetMfgrHistory(CalcuQuote.Core.ViewModel.CQOpenApi.Request.CQAPIGetMfgrHistoryRequest)">
+            <summary>
+            Get the Quote history data by Mfgr
+            </summary>
+        </member>
+        <member name="T:CalcuQuote.API.CQApi.Controllers.CQRfqStatusController">
+            <summary>
+            CQ RFQ Status
+            </summary>
+        </member>
+        <member name="M:CalcuQuote.API.CQApi.Controllers.CQRfqStatusController.GetRFQAssemblyData(System.String,System.String)">
+            <summary>
+            Gets the RFQ assembly data.
+            </summary>
+            <param name="rfqId">The RFQ identifier.</param>
+            <param name="assemblyId">The assembly identifier.</param>
+            <returns>RFQ Data</returns>
+        </member>
+        <member name="M:CalcuQuote.API.CQApi.Controllers.CQRfqStatusController.GetRFQData(System.String)">
+            <summary>
+            Gets the RFQ data.
+            </summary>
+            <param name="rfqId">The RFQ identifier.</param>
+            <returns>RFQ Data</returns>
+        </member>
+        <member name="M:CalcuQuote.API.CQApi.Controllers.CQRfqStatusController.GetAssembliesData(System.String)">
+            <summary>
+            Get the assembly data.
+            </summary>
+            <param name="assemblyId" example = "121">Assembly Id</param>
+            <returns>Assembly Data</returns>
+        </member>
+        <member name="M:CalcuQuote.API.CQApi.Controllers.CQRfqStatusController.Search(CalcuQuote.Core.ViewModel.SearchRFQDetailVM)">
+            <summary>
+            Search RFQ Details
+            </summary>
+            <returns>RFQ Details</returns>
+        </member>
+        <member name="M:CalcuQuote.API.CQApi.Controllers.CQRfqStatusController.RFQStatus(CalcuQuote.Core.ViewModel.CQOpenApi.Request.CQAPIRFQStatusRequest)">
+            <summary>
+            Gets the RFQ assembly data.
+            </summary>
+            <returns>RFQ Assembly Data</returns>
+        </member>
+        <member name="M:CalcuQuote.API.CQApi.Controllers.V2.CQAPISupplierV2Controller.GetAllSuppliers(CalcuQuote.Core.ViewModel.CQOpenApi.Request.CQAPIGetAllSupplierRequest)">
+            <summary>
+            Get active suppliers list.
+            </summary>
+        </member>
+        <member name="M:CalcuQuote.API.CQApi.Controllers.V2.CQAPISupplierV2Controller.GetSupplierByName(CalcuQuote.Core.ViewModel.CQOpenApi.Request.CQAPIGetAllSupplierByNameRequest)">
+            <summary>
+            Get active supplier by supplier name.
+            </summary>
+        </member>
+        <member name="M:CalcuQuote.API.CQApi.Controllers.V2.CQPCBV2Controller.SubmitAnswers(CalcuQuote.Core.ViewModel.CQOpenApi.Request.CQAPISubmitPCBAnswersRequestV2)">
+            <summary>
+            Submit PCB answers for BOM Lines
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:CalcuQuote.API.CQApi.Controllers.V2.CQPCBV2Controller.UpdatePricing(CalcuQuote.Core.ViewModel.CQOpenApi.Request.CQAPIUpdatePCBPricingRequest)">
+            <summary>
+            Update pricing for PCB
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:CalcuQuote.API.CQApi.Controllers.V2.CQPCBV2Controller.GetSavedPCBAnswer(CalcuQuote.Core.ViewModel.CQOpenApi.Request.CQAPIGetSavedPCBAnswerRequest)">
+            <summary>
+            Get saved PCB answers
+            </summary>
+        </member>
+        <member name="M:CalcuQuote.API.CQApi.Controllers.V2.CQReportsV2Controller.GetQuoteReport(CalcuQuote.Core.ViewModel.CQOpenApi.Request.CQAPIGetQuoteReportV2Request)">
+            <summary>
+            Get Quote report in Excel or PDF
+            </summary>
+            <remarks>
+                Notes: <br/>
+                - Possible Values for Quote Report Type are "Detailed" and "Summary".
+                - Quote Detail Options are used when Quote Report Type is Detailed.
+                - Exception Report Options are used when file format is PDF and IncludeExceptionReport flag is true.
+                - Detailed Quote Report only available in PDF format.
+            </remarks>
+            <param name="request">Quote report request V2</param>
+            <returns>Quote report in Excel or PDF</returns>
+        </member>
+        <member name="T:CalcuQuote.API.CQApi.Controllers.V2.CQSummaryV2Controller">
+            <summary>
+            CQSummaryV2 Controller
+            </summary>
+        </member>
+        <member name="M:CalcuQuote.API.CQApi.Controllers.V2.CQSummaryV2Controller.UpsertMiscellaneous(CalcuQuote.Core.ViewModel.CQOpenApi.Request.CQAPIUpsertMiscellaneousV2Request)">
+            <summary>
+            Insert/Update Summary miscellaneous
+            </summary>
+            <param name="request">Request to insert/update summary miscellaneous</param>
+            <returns> Returns http status code and optional message </returns>
+        </member>
+        <member name="T:CalcuQuote.API.CQApi.Filters.CQAPIAuthorizeAttribute">
+            <summary>
+            Custom API Authorization
+            </summary>
+        </member>
+        <member name="T:CalcuQuote.API.CQApi.Models.APICredentials">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CalcuQuote.API.CQApi.Models.APICredentials.AccessToken">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:CalcuQuote.API.CQApi.Models.APICredentials.ClientId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:CalcuQuote.API.CQApi.Models.ErrorResponse">
+            <summary>
+            Error Response
+            </summary>
+        </member>
+        <member name="P:CalcuQuote.API.CQApi.Models.Properties.QuoteID">
+            <summary>
+            RFQ Id
+            </summary>
+        </member>
+        <member name="P:CalcuQuote.API.CQApi.Models.Properties.AssemblyID">
+            <summary>
+            Assembly Id
+            </summary>
+        </member>
+        <member name="T:CalcuQuote.API.Filters.SetDefaultDataBaseFilterAttribute">
+            Avoid using of this filter
+            Here default conenction is being set while calling the related API!
+            Currently this filter is used for only Digikey refresh token API <summary>
+            Avoid using of this filter
+            </summary>
+        </member>
+    </members>
+</doc>

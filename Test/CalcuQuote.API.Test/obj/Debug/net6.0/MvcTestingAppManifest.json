@@ -1,0 +1,8 @@
+{
+  "CalcuQuote.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "C:\\Users\\TGS050\\Desktop\\project\\CQ-CalcuQuote\\CalcuQuote.API",
+  "CalcuQuote.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "C:\\Users\\TGS050\\Desktop\\project\\CQ-CalcuQuote\\CalcuQuote.Core",
+  "CalcuQuote.CQService.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "C:\\Users\\TGS050\\Desktop\\project\\CQ-CalcuQuote\\CQService\\CalcuQuote.CQService.Core",
+  "CalcuQuote.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "C:\\Users\\TGS050\\Desktop\\project\\CQ-CalcuQuote\\CalcuQuote.Infrastructure",
+  "CalcuQuote.RabbitMQContract, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "C:\\Users\\TGS050\\Desktop\\project\\CQ-CalcuQuote\\CalcuQuote.RabbitMQContract",
+  "CQ.Contracts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "C:\\Users\\TGS050\\Desktop\\project\\CQ-CalcuQuote\\CQ.Contracts"
+}

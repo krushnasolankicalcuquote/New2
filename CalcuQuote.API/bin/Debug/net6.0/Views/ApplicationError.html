@@ -1,0 +1,107 @@
+﻿<!DOCTYPE html>
+<html lang="en-us" id="extr-page">
+<head>
+    <meta charset="utf-8">
+    <title>CalcuQuote</title>
+    <meta name="robots" content="noindex" />
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="shortcut icon" href="https://login.calcuquote.com/images/calcuquotefavicon.ico" type="image/x-icon" />
+    <link href="https://login.calcuquote.com/css/bundle/vendor.min.css" rel="stylesheet" />
+    <link href="https://login.calcuquote.com/css/bundle/login.min.css" rel="stylesheet" />
+    <link href="https://login.calcuquote.com/css/bundle/site.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous" />
+
+    <style>
+        #extr-page {
+            background-image: none !important;
+            background-size: cover;
+            height: 100%;
+            background-position: center;
+        }
+
+        a:focus, a:hover {
+            text-decoration: none !important;
+        }
+
+        .ErrorMessageDiv {
+            padding: 72px 0px 0px;
+        }
+
+        .ErrorMessageH1 {
+            font-size: 76px;
+            font-weight: 300;
+        }
+
+        .FontBold500 {
+            font-weight: 500 !important;
+        }
+
+        .Divider {
+            border-bottom: 1px solid #CCCCCC;
+            margin: 0px 35px;
+            padding-bottom: 20px;
+        }
+
+        .TroubleDiv {
+            font-size: 18px;
+            padding: 10px 0px;
+        }
+
+        .ErrorPageBackground {
+            background-color: #3879d9 !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="header-wrapper" id="page-header" style="position:relative;">
+        <div class="header">
+            <div class="col-md-4">
+                <a href="/#/">
+                    <img class="cq-logo" src="https://login.calcuquote.com/images/Logo.png" alt="CalcuQuote" />
+                </a>
+            </div>
+            <div class="col-md-4">
+            </div>
+            <div class="col-md-4">
+            </div>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+    <div class="body-container">
+        <div class="text-center ErrorMessageDiv"><h1 class="ErrorMessageH1">Oops! Something went wrong.</h1></div>
+        <div class="text-center"><h1><span class="fa fa-remove ErrorIcon"></span></h1></div>
+
+        <div class="text-center">
+            <h3 class="FontBold500">Please visit <a href="http://status.calcuquote.com/">HERE</a> to view current system status.</h3>
+        </div>
+        <div class="text-center">
+            <h3 class="FontBold500">For immediate assistance or to report an issue, please contact <a href="mailto:Support@CalcuQuote.com">Support@CalcuQuote.com</a>.</h3>
+        </div>
+        <div class="text-center Divider"></div>
+        <div class="text-center TroubleDiv">
+            <span class="FontBold500">Having Trouble?</span>
+        </div>
+        <div class="text-center" style="padding: 10px 0px;">
+            <button type="button" role="button" class="btn btn-primary ErrorPageBackground" onclick="window.location.reload(true);">
+                <span>Reload Page</span>
+            </button>
+        </div>
+        <div class="clearfix"></div>
+        <div class="page-footer" id="page-footer" style="position:relative !important;">
+            <div id="navbar" class="navbar-collapse collapse" ng-cloak>
+                <div class="nav navbar-nav navbar-right">
+                    <span id="copyright" class="copyright">
+                        CalcuQuote &#169;
+                        <script type="text/javascript">
+                            var CurrentYear = new Date().getFullYear()
+                            document.write(CurrentYear);
+                        </script>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

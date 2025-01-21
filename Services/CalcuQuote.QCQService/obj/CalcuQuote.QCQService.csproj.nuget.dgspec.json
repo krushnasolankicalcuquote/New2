@@ -1,0 +1,773 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\TGS050\\Desktop\\project\\CQ-CalcuQuote\\Services\\CalcuQuote.QCQService\\CalcuQuote.QCQService.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\TGS050\\Desktop\\project\\CQ-CalcuQuote\\CalcuQuote.Core\\CalcuQuote.Core.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\TGS050\\Desktop\\project\\CQ-CalcuQuote\\CalcuQuote.Core\\CalcuQuote.Core.csproj",
+        "projectName": "CalcuQuote.Core",
+        "projectPath": "C:\\Users\\TGS050\\Desktop\\project\\CQ-CalcuQuote\\CalcuQuote.Core\\CalcuQuote.Core.csproj",
+        "packagesPath": "C:\\Users\\TGS050\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\TGS050\\Desktop\\project\\CQ-CalcuQuote\\CalcuQuote.Core\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\TGS050\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://pkgs.dev.azure.com/calcuquote/CalcuQuote/_packaging/CQ-CoreLibrary/nuget/v3/index.json": {},
+          "https://pkgs.dev.azure.com/calcuquote/CalcuQuote/_packaging/CQ-DBLibrary/nuget/v3/index.json": {},
+          "https://pkgs.dev.azure.com/calcuquote/_packaging/CQ-Library/nuget/v3/index.json": {},
+          "https://pkgs.dev.azure.com/calcuquote/_packaging/CQ.Library/nuget/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Users\\TGS050\\Desktop\\project\\CQ-CalcuQuote\\CalcuQuote.RabbitMQContract\\CalcuQuote.RabbitMQContract.csproj": {
+                "projectPath": "C:\\Users\\TGS050\\Desktop\\project\\CQ-CalcuQuote\\CalcuQuote.RabbitMQContract\\CalcuQuote.RabbitMQContract.csproj"
+              },
+              "C:\\Users\\TGS050\\Desktop\\project\\CQ-CalcuQuote\\CQ.Contracts\\CQ.Contracts.csproj": {
+                "projectPath": "C:\\Users\\TGS050\\Desktop\\project\\CQ-CalcuQuote\\CQ.Contracts\\CQ.Contracts.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "AWSSDK.Core": {
+              "target": "Package",
+              "version": "[3.7.200, )"
+            },
+            "AWSSDK.S3": {
+              "target": "Package",
+              "version": "[3.7.200, )"
+            },
+            "EPPlus": {
+              "target": "Package",
+              "version": "[4.5.3.3, )"
+            },
+            "FileHelpers": {
+              "target": "Package",
+              "version": "[3.5.1, )"
+            },
+            "MassTransit": {
+              "target": "Package",
+              "version": "[8.0.5, )"
+            },
+            "Microsoft.AspNetCore.Http": {
+              "target": "Package",
+              "version": "[2.2.2, )"
+            },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.7, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[6.0.6, )"
+            },
+            "MongoDB.Driver": {
+              "target": "Package",
+              "version": "[2.20.0, )"
+            },
+            "ReportViewerCore.NETCore": {
+              "target": "Package",
+              "version": "[15.1.16, )"
+            },
+            "RestSharp": {
+              "target": "Package",
+              "version": "[108.0.1, )"
+            },
+            "StackExchange.Redis": {
+              "target": "Package",
+              "version": "[2.6.48, )"
+            },
+            "StyleCop.Analyzers": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[1.2.0-beta.435, )"
+            },
+            "Swashbuckle.AspNetCore.Annotations": {
+              "target": "Package",
+              "version": "[6.5.0, )"
+            },
+            "Swashbuckle.AspNetCore.Filters": {
+              "target": "Package",
+              "version": "[7.0.6, )"
+            },
+            "System.Buffers": {
+              "target": "Package",
+              "version": "[4.5.1, )"
+            },
+            "System.Memory": {
+              "target": "Package",
+              "version": "[4.5.5, )"
+            },
+            "System.Numerics.Vectors": {
+              "target": "Package",
+              "version": "[4.5.0, )"
+            },
+            "System.Reflection.Emit": {
+              "target": "Package",
+              "version": "[4.7.0, )"
+            },
+            "System.Reflection.Emit.Lightweight": {
+              "target": "Package",
+              "version": "[4.7.0, )"
+            },
+            "System.ServiceModel.Primitives": {
+              "target": "Package",
+              "version": "[4.9.0, )"
+            },
+            "System.Text.Json": {
+              "target": "Package",
+              "version": "[6.0.5, )"
+            },
+            "System.Threading.Tasks.Extensions": {
+              "target": "Package",
+              "version": "[4.5.4, )"
+            },
+            "System.ValueTuple": {
+              "target": "Package",
+              "version": "[4.5.0, )"
+            },
+            "log4net": {
+              "target": "Package",
+              "version": "[2.0.14, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.205\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\TGS050\\Desktop\\project\\CQ-CalcuQuote\\CalcuQuote.Infrastructure\\CalcuQuote.Infrastructure.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\TGS050\\Desktop\\project\\CQ-CalcuQuote\\CalcuQuote.Infrastructure\\CalcuQuote.Infrastructure.csproj",
+        "projectName": "CalcuQuote.Infrastructure",
+        "projectPath": "C:\\Users\\TGS050\\Desktop\\project\\CQ-CalcuQuote\\CalcuQuote.Infrastructure\\CalcuQuote.Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\TGS050\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\TGS050\\Desktop\\project\\CQ-CalcuQuote\\CalcuQuote.Infrastructure\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\TGS050\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://pkgs.dev.azure.com/calcuquote/CalcuQuote/_packaging/CQ-CoreLibrary/nuget/v3/index.json": {},
+          "https://pkgs.dev.azure.com/calcuquote/CalcuQuote/_packaging/CQ-DBLibrary/nuget/v3/index.json": {},
+          "https://pkgs.dev.azure.com/calcuquote/_packaging/CQ-Library/nuget/v3/index.json": {},
+          "https://pkgs.dev.azure.com/calcuquote/_packaging/CQ.Library/nuget/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Users\\TGS050\\Desktop\\project\\CQ-CalcuQuote\\CalcuQuote.Core\\CalcuQuote.Core.csproj": {
+                "projectPath": "C:\\Users\\TGS050\\Desktop\\project\\CQ-CalcuQuote\\CalcuQuote.Core\\CalcuQuote.Core.csproj"
+              },
+              "C:\\Users\\TGS050\\Desktop\\project\\CQ-CalcuQuote\\CalcuQuote.RabbitMQContract\\CalcuQuote.RabbitMQContract.csproj": {
+                "projectPath": "C:\\Users\\TGS050\\Desktop\\project\\CQ-CalcuQuote\\CalcuQuote.RabbitMQContract\\CalcuQuote.RabbitMQContract.csproj"
+              },
+              "C:\\Users\\TGS050\\Desktop\\project\\CQ-CalcuQuote\\CQService\\CalcuQuote.CQService.Core\\CalcuQuote.CQService.Core.csproj": {
+                "projectPath": "C:\\Users\\TGS050\\Desktop\\project\\CQ-CalcuQuote\\CQService\\CalcuQuote.CQService.Core\\CalcuQuote.CQService.Core.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[11.0.1, )"
+            },
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[11.0.0, )"
+            },
+            "Azure.Core": {
+              "target": "Package",
+              "version": "[1.25.0, )"
+            },
+            "Azure.Identity": {
+              "target": "Package",
+              "version": "[1.6.0, )"
+            },
+            "Azure.Security.KeyVault.Secrets": {
+              "target": "Package",
+              "version": "[4.3.0, )"
+            },
+            "ChilkatDnCore": {
+              "target": "Package",
+              "version": "[10.0.1, )"
+            },
+            "EsiNet.Polly": {
+              "target": "Package",
+              "version": "[0.4.0, )"
+            },
+            "FluentValidation": {
+              "target": "Package",
+              "version": "[11.1.0, )"
+            },
+            "IdentityModel": {
+              "target": "Package",
+              "version": "[5.1.0, )"
+            },
+            "MassTransit.Azure.ServiceBus.Core": {
+              "target": "Package",
+              "version": "[8.0.5, )"
+            },
+            "MassTransit.RabbitMQ": {
+              "target": "Package",
+              "version": "[8.0.5, )"
+            },
+            "Microsoft.ApplicationInsights": {
+              "target": "Package",
+              "version": "[2.21.0, )"
+            },
+            "Microsoft.AspNetCore.Owin": {
+              "target": "Package",
+              "version": "[6.0.7, )"
+            },
+            "Microsoft.EntityFrameworkCore.Proxies": {
+              "target": "Package",
+              "version": "[6.0.7, )"
+            },
+            "Microsoft.Extensions.Logging.Log4Net.AspNetCore": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "NCalc.NetCore": {
+              "target": "Package",
+              "version": "[1.0.1, )"
+            },
+            "NPOI": {
+              "target": "Package",
+              "version": "[2.5.6, )"
+            },
+            "Nancy": {
+              "target": "Package",
+              "version": "[2.0.0, )"
+            },
+            "Neleus.DependencyInjection.Extensions": {
+              "target": "Package",
+              "version": "[1.0.6, )"
+            },
+            "NetCore.AutoRegisterDi": {
+              "target": "Package",
+              "version": "[2.1.0, )"
+            },
+            "PdfSharpCore": {
+              "target": "Package",
+              "version": "[1.3.32, )"
+            },
+            "Polly": {
+              "target": "Package",
+              "version": "[7.2.3, )"
+            },
+            "Polly.Extensions.Http": {
+              "target": "Package",
+              "version": "[3.0.0, )"
+            },
+            "QRCoder": {
+              "target": "Package",
+              "version": "[1.4.3, )"
+            },
+            "RabbitMQ.Client": {
+              "target": "Package",
+              "version": "[6.4.0, )"
+            },
+            "SSH.NET": {
+              "target": "Package",
+              "version": "[2020.0.2, )"
+            },
+            "Schema.NET": {
+              "target": "Package",
+              "version": "[11.0.1, )"
+            },
+            "StyleCop.Analyzers": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[1.2.0-beta.435, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.3.1, )"
+            },
+            "Swashbuckle.AspNetCore.Newtonsoft": {
+              "target": "Package",
+              "version": "[6.3.1, )"
+            },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[6.21.0, )"
+            },
+            "Unity.NetCore": {
+              "target": "Package",
+              "version": "[4.0.3, )"
+            },
+            "iTextSharp.LGPLv2.Core": {
+              "target": "Package",
+              "version": "[1.8.0, )"
+            },
+            "log4net": {
+              "target": "Package",
+              "version": "[2.0.14, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.205\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\TGS050\\Desktop\\project\\CQ-CalcuQuote\\CalcuQuote.RabbitMQContract\\CalcuQuote.RabbitMQContract.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\TGS050\\Desktop\\project\\CQ-CalcuQuote\\CalcuQuote.RabbitMQContract\\CalcuQuote.RabbitMQContract.csproj",
+        "projectName": "CalcuQuote.RabbitMQContract",
+        "projectPath": "C:\\Users\\TGS050\\Desktop\\project\\CQ-CalcuQuote\\CalcuQuote.RabbitMQContract\\CalcuQuote.RabbitMQContract.csproj",
+        "packagesPath": "C:\\Users\\TGS050\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\TGS050\\Desktop\\project\\CQ-CalcuQuote\\CalcuQuote.RabbitMQContract\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\TGS050\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://pkgs.dev.azure.com/calcuquote/CalcuQuote/_packaging/CQ-CoreLibrary/nuget/v3/index.json": {},
+          "https://pkgs.dev.azure.com/calcuquote/CalcuQuote/_packaging/CQ-DBLibrary/nuget/v3/index.json": {},
+          "https://pkgs.dev.azure.com/calcuquote/_packaging/CQ-Library/nuget/v3/index.json": {},
+          "https://pkgs.dev.azure.com/calcuquote/_packaging/CQ.Library/nuget/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.1, )"
+            },
+            "StyleCop.Analyzers": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[1.2.0-beta.435, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.205\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\TGS050\\Desktop\\project\\CQ-CalcuQuote\\CQ.Contracts\\CQ.Contracts.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\TGS050\\Desktop\\project\\CQ-CalcuQuote\\CQ.Contracts\\CQ.Contracts.csproj",
+        "projectName": "CQ.Contracts",
+        "projectPath": "C:\\Users\\TGS050\\Desktop\\project\\CQ-CalcuQuote\\CQ.Contracts\\CQ.Contracts.csproj",
+        "packagesPath": "C:\\Users\\TGS050\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\TGS050\\Desktop\\project\\CQ-CalcuQuote\\CQ.Contracts\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\TGS050\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://pkgs.dev.azure.com/calcuquote/CalcuQuote/_packaging/CQ-CoreLibrary/nuget/v3/index.json": {},
+          "https://pkgs.dev.azure.com/calcuquote/CalcuQuote/_packaging/CQ-DBLibrary/nuget/v3/index.json": {},
+          "https://pkgs.dev.azure.com/calcuquote/_packaging/CQ-Library/nuget/v3/index.json": {},
+          "https://pkgs.dev.azure.com/calcuquote/_packaging/CQ.Library/nuget/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "MassTransit.RabbitMQ": {
+              "target": "Package",
+              "version": "[8.0.5, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.205\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\TGS050\\Desktop\\project\\CQ-CalcuQuote\\CQService\\CalcuQuote.CQService.Core\\CalcuQuote.CQService.Core.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\TGS050\\Desktop\\project\\CQ-CalcuQuote\\CQService\\CalcuQuote.CQService.Core\\CalcuQuote.CQService.Core.csproj",
+        "projectName": "CalcuQuote.CQService.Core",
+        "projectPath": "C:\\Users\\TGS050\\Desktop\\project\\CQ-CalcuQuote\\CQService\\CalcuQuote.CQService.Core\\CalcuQuote.CQService.Core.csproj",
+        "packagesPath": "C:\\Users\\TGS050\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\TGS050\\Desktop\\project\\CQ-CalcuQuote\\CQService\\CalcuQuote.CQService.Core\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\TGS050\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://pkgs.dev.azure.com/calcuquote/CalcuQuote/_packaging/CQ-CoreLibrary/nuget/v3/index.json": {},
+          "https://pkgs.dev.azure.com/calcuquote/CalcuQuote/_packaging/CQ-DBLibrary/nuget/v3/index.json": {},
+          "https://pkgs.dev.azure.com/calcuquote/_packaging/CQ-Library/nuget/v3/index.json": {},
+          "https://pkgs.dev.azure.com/calcuquote/_packaging/CQ.Library/nuget/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Users\\TGS050\\Desktop\\project\\CQ-CalcuQuote\\CalcuQuote.Core\\CalcuQuote.Core.csproj": {
+                "projectPath": "C:\\Users\\TGS050\\Desktop\\project\\CQ-CalcuQuote\\CalcuQuote.Core\\CalcuQuote.Core.csproj"
+              },
+              "C:\\Users\\TGS050\\Desktop\\project\\CQ-CalcuQuote\\CalcuQuote.RabbitMQContract\\CalcuQuote.RabbitMQContract.csproj": {
+                "projectPath": "C:\\Users\\TGS050\\Desktop\\project\\CQ-CalcuQuote\\CalcuQuote.RabbitMQContract\\CalcuQuote.RabbitMQContract.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "StyleCop.Analyzers": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[1.2.0-beta.435, )"
+            },
+            "System.Buffers": {
+              "target": "Package",
+              "version": "[4.5.1, )"
+            },
+            "System.Memory": {
+              "target": "Package",
+              "version": "[4.5.5, )"
+            },
+            "System.Numerics.Vectors": {
+              "target": "Package",
+              "version": "[4.5.0, )"
+            },
+            "System.Threading.Tasks.Extensions": {
+              "target": "Package",
+              "version": "[4.5.4, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.205\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\TGS050\\Desktop\\project\\CQ-CalcuQuote\\Services\\CalcuQuote.QCQService\\CalcuQuote.QCQService.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\TGS050\\Desktop\\project\\CQ-CalcuQuote\\Services\\CalcuQuote.QCQService\\CalcuQuote.QCQService.csproj",
+        "projectName": "CalcuQuote.QCQService",
+        "projectPath": "C:\\Users\\TGS050\\Desktop\\project\\CQ-CalcuQuote\\Services\\CalcuQuote.QCQService\\CalcuQuote.QCQService.csproj",
+        "packagesPath": "C:\\Users\\TGS050\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\TGS050\\Desktop\\project\\CQ-CalcuQuote\\Services\\CalcuQuote.QCQService\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\TGS050\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://pkgs.dev.azure.com/calcuquote/CalcuQuote/_packaging/CQ-CoreLibrary/nuget/v3/index.json": {},
+          "https://pkgs.dev.azure.com/calcuquote/CalcuQuote/_packaging/CQ-DBLibrary/nuget/v3/index.json": {},
+          "https://pkgs.dev.azure.com/calcuquote/_packaging/CQ-Library/nuget/v3/index.json": {},
+          "https://pkgs.dev.azure.com/calcuquote/_packaging/CQ.Library/nuget/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Users\\TGS050\\Desktop\\project\\CQ-CalcuQuote\\CalcuQuote.Core\\CalcuQuote.Core.csproj": {
+                "projectPath": "C:\\Users\\TGS050\\Desktop\\project\\CQ-CalcuQuote\\CalcuQuote.Core\\CalcuQuote.Core.csproj"
+              },
+              "C:\\Users\\TGS050\\Desktop\\project\\CQ-CalcuQuote\\CalcuQuote.Infrastructure\\CalcuQuote.Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\TGS050\\Desktop\\project\\CQ-CalcuQuote\\CalcuQuote.Infrastructure\\CalcuQuote.Infrastructure.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "MassTransit": {
+              "target": "Package",
+              "version": "[8.0.5, )"
+            },
+            "MassTransit.Newtonsoft": {
+              "target": "Package",
+              "version": "[8.0.5, )"
+            },
+            "MassTransit.RabbitMQ": {
+              "target": "Package",
+              "version": "[8.0.5, )"
+            },
+            "Microsoft.Extensions.Hosting.WindowsServices": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "Microsoft.Extensions.Http.Polly": {
+              "target": "Package",
+              "version": "[7.0.5, )"
+            },
+            "StyleCop.Analyzers": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[1.2.0-beta.435, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.205\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

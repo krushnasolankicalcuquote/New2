@@ -1,0 +1,79 @@
+variables:
+- name: solution
+  value: '**/*.sln'
+- name: buildPlatform
+  value: 'x64'
+- name: buildConfiguration
+  value: 'Release'
+stages:
+- stage: __default
+  jobs:
+  - job: Job
+    pool:
+      vmImage: 'windows-latest'
+    steps:
+    - task: NuGetToolInstaller@1
+    - task: NuGetCommand@2
+      inputs:
+        command: 'restore'
+        restoreSolution: '$(solution)'
+        feedsToUse: 'config'
+        nugetConfigPath: '.nuget/NuGet.Config'
+        externalFeedCredentials: 'CQCoreLibraryNugetServiceConnection, CQDBLIbraryNugetServiceConnection, CQLibraryNugetServiceConnection'
+    - task: VSBuild@1
+      displayName: Build Solution
+      inputs:
+        solution: '$(solution)'
+        clean: true
+        msbuildArchitecture: 'x64'
+        createLogFile: true
+    - task: MSBuild@1
+      displayName: Build QuoteCQ-API
+      inputs:
+        solution: 'QuoteCQ-API/QuoteCQ-API.csproj'
+        msbuildVersion: latest
+        msbuildArchitecture: x64
+        msbuildArguments: '/p:DeployOnBuild=true /p:DeployDefaultTarget=WebPublish /p:WebPublishMethod=FileSystem /p:publishUrl="$(build.ArtifactStagingDirectory)\QuoteCQAPI"'
+        platform: '$(buildPlatform)'
+        configuration: '$(buildConfiguration)'
+        createLogFile: true
+    - task: DeleteFiles@1
+      displayName: Delete Config Files & Folders
+      inputs:
+        SourceFolder: '$(Build.ArtifactStagingDirectory)'
+        Contents: |
+          **/*Web.config
+          **/*Log/*
+          **/*Logs/*
+          QuoteCQAPI/App_Data
+
+    - task: CopyFiles@2
+      displayName: Copy documentation files
+      inputs:
+        SourceFolder: '$(Build.SourcesDirectory)/QuoteCQ-API/bin'
+        Contents: |
+          *QuoteCQ-API.xml
+          *QuoteStar.ViewModel.xml
+        TargetFolder: '$(build.ArtifactStagingDirectory)\QuoteCQAPI\bin'
+        OverWrite: true
+
+    - task: ArchiveFiles@2
+      displayName: Archive QuoteCQ-API
+      inputs:
+        rootFolderOrFile: '$(Build.ArtifactStagingDirectory)/QuoteCQAPI'
+        includeRootFolder: false
+        archiveType: 'zip'
+        archiveFile: '$(Build.ArtifactStagingDirectory)/QuoteCQAPI.zip'
+        replaceExistingArchive: true
+    - task: DeleteFiles@1
+      displayName: Delete All Services Folders
+      inputs:
+        SourceFolder: '$(Build.ArtifactStagingDirectory)'
+        Contents: |
+          QuoteCQAPI
+    - task: PublishBuildArtifacts@1
+      inputs:
+        PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+        ArtifactName: 'drop'
+        publishLocation: 'Container'
+

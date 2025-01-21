@@ -1,0 +1,209 @@
+﻿[
+	{
+		"SupplierName": "Summit Interconnect",
+		"Verified": true,
+		"InstantPCBQuotes": false,
+		"AS9100": true,
+		"ITAR": true,
+		"Country": [
+			"US",
+			"EU",
+			"China"
+		],
+		"IPCClass": [
+			"II",
+			"III"
+		],
+		"QuickTurnInDays": [
+			1,
+			3,
+			5
+		],
+		"MaxPCBLayers": [
+			70
+		],
+		"ContactPerson": [
+			{
+				"FirstName": "Keith",
+				"LastName": "Larson",
+				"Email": "keith.larson@summit-pcb.com",
+				"Phone": "8179155664"
+			}
+		],
+		"Address1": "",
+		"Address2": "",
+		"Address3": ""
+	},
+	{
+		"SupplierName": "DirectPCB",
+		"Verified": true,
+		"InstantPCBQuotes": true,
+		"AS9100": false,
+		"ITAR": true,
+		"Country": [
+			"US",
+			"China",
+			"EU"
+		],
+		"RoHS": true,
+		"IPCClass": [
+			"II",
+			"III"
+		],
+		"QuickTurnInDays": [
+			5
+		],
+		"MaxPCBLayers": [
+			24
+		],
+		"ContactPerson": [
+			{
+				"FirstName": "Greg",
+				"LastName": "Papandrew",
+				"Email": "greg@directpcb-asia.com",
+				"Phone": "7274807045"
+			}
+		],
+		"Address1": "5B506, 5th Floor, Block AB Tianji Mansion,",
+		"Address2": "Chegongmiao Industrial Park Xiangmi Lake,",
+		"Address3": "Futian, Shenzhen, China"
+	},
+	{
+		"SupplierName": "Cirexx International Inc",
+		"Verified": true,
+		"InstantPCBQuotes": true,
+		"AS9100": true,
+		"ITAR": true,
+		"Country": [
+			"US",
+			"Asia",
+			"EU"
+		],
+		"RoHS": true,
+		"IPCClass": [
+			"II",
+			"III"
+		],
+		"QuickTurnInDays": [
+			1
+		],
+		"MaxPCBLayers": [
+			30
+		],
+		"ContactPerson": [
+			{
+				"FirstName": "Destin",
+				"LastName": "Cockcroft",
+				"Email": "dacockcroft@cirexx.com",
+				"Phone": "(408) 988-7298"
+			}
+		],
+		"Address1": "791 Nuttman St. Santa Clara, CA 95054",
+		"Address2": "",
+		"Address3": ""
+	},
+	{
+		"SupplierName": "Imagineering",
+		"Verified": true,
+		"InstantPCBQuotes": true,
+		"AS9100": true,
+		"ITAR": true,
+		"Country": [
+			"US"
+		],
+		"RoHS": true,
+		"IPCClass": [
+			"II",
+			"III"
+		],
+		"QuickTurnInDays": [
+			1,
+			3,
+			5
+		],
+		"MaxPCBLayers": [
+			32
+		],
+		"ContactPerson": [
+			{
+				"FirstName": "Amir",
+				"LastName": "Roy",
+				"Email": "amir@pcbnet.com",
+				"Phone": "8475712907"
+			}
+		],
+		"Address1": "2425 Touhy Ave",
+		"Address2": "",
+		"Address3": ""
+	},
+	{
+		"SupplierName": "ICAPE",
+		"Verified": true,
+		"InstantPCBQuotes": true,
+		"AS9100": true,
+		"ITAR": false,
+		"Country": [
+			"US",
+			"Asia",
+			"EU"
+		],
+		"RoHS": true,
+		"IPCClass": [
+			"II",
+			"III"
+		],
+		"QuickTurnInDays": [
+			3,
+			5
+		],
+		"MaxPCBLayers": [
+			60
+		],
+		"ContactPerson": [
+			{
+				"FirstName": "guillaume",
+				"LastName": "chauvet",
+				"Email": "guillaume.chauvet@divsys-icape.com",
+				"Phone": "3172960680"
+			}
+		],
+		"Address1": "8110 Zionsville Road Indianapolis",
+		"Address2": "",
+		"Address3": ""
+	},
+	{
+		"SupplierName": "JETPCB",
+		"Verified": true,
+		"InstantPCBQuotes": true,
+		"AS9100": true,
+		"ITAR": false,
+		"Country": [
+			"US",
+			"Asia",
+			"EU"
+		],
+		"RoHS": true,
+		"IPCClass": [
+			"II"
+		],
+		"QuickTurnInDays": [
+			1,
+			3,
+			5
+		],
+		"MaxPCBLayers": [
+			40
+		],
+		"ContactPerson": [
+			{
+				"FirstName": "Frank",
+				"LastName": "Lin",
+				"Email": "sales@jetpcb.com",
+				"Phone": "408-922-7278"
+			}
+		],
+		"Address1": "2055 JUNCTION AVE STE#135, SAN JOSE, CA 95131",
+		"Address2": "",
+		"Address3": ""
+	}
+]
