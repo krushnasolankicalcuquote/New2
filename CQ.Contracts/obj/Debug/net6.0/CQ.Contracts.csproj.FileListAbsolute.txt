@@ -1,0 +1,12 @@
+C:\Users\TGS050\Desktop\project\CQ-CalcuQuote\CQ.Contracts\bin\Debug\net6.0\CQ.Contracts.deps.json
+C:\Users\TGS050\Desktop\project\CQ-CalcuQuote\CQ.Contracts\bin\Debug\net6.0\CQ.Contracts.dll
+C:\Users\TGS050\Desktop\project\CQ-CalcuQuote\CQ.Contracts\bin\Debug\net6.0\CQ.Contracts.pdb
+C:\Users\TGS050\Desktop\project\CQ-CalcuQuote\CQ.Contracts\obj\Debug\net6.0\CQ.Contracts.csproj.AssemblyReference.cache
+C:\Users\TGS050\Desktop\project\CQ-CalcuQuote\CQ.Contracts\obj\Debug\net6.0\CQ.Contracts.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\TGS050\Desktop\project\CQ-CalcuQuote\CQ.Contracts\obj\Debug\net6.0\CQ.Contracts.AssemblyInfoInputs.cache
+C:\Users\TGS050\Desktop\project\CQ-CalcuQuote\CQ.Contracts\obj\Debug\net6.0\CQ.Contracts.AssemblyInfo.cs
+C:\Users\TGS050\Desktop\project\CQ-CalcuQuote\CQ.Contracts\obj\Debug\net6.0\CQ.Contracts.csproj.CoreCompileInputs.cache
+C:\Users\TGS050\Desktop\project\CQ-CalcuQuote\CQ.Contracts\obj\Debug\net6.0\CQ.Contracts.dll
+C:\Users\TGS050\Desktop\project\CQ-CalcuQuote\CQ.Contracts\obj\Debug\net6.0\refint\CQ.Contracts.dll
+C:\Users\TGS050\Desktop\project\CQ-CalcuQuote\CQ.Contracts\obj\Debug\net6.0\CQ.Contracts.pdb
+C:\Users\TGS050\Desktop\project\CQ-CalcuQuote\CQ.Contracts\obj\Debug\net6.0\ref\CQ.Contracts.dll

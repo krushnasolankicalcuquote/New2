@@ -1,0 +1,12 @@
+C:\Users\TGS050\Desktop\project\CQ-CalcuQuote\CalcuQuote.RabbitMQContract\bin\Debug\net6.0\CalcuQuote.RabbitMQContract.deps.json
+C:\Users\TGS050\Desktop\project\CQ-CalcuQuote\CalcuQuote.RabbitMQContract\bin\Debug\net6.0\CalcuQuote.RabbitMQContract.dll
+C:\Users\TGS050\Desktop\project\CQ-CalcuQuote\CalcuQuote.RabbitMQContract\bin\Debug\net6.0\CalcuQuote.RabbitMQContract.pdb
+C:\Users\TGS050\Desktop\project\CQ-CalcuQuote\CalcuQuote.RabbitMQContract\obj\Debug\net6.0\CalcuQuote.RabbitMQContract.csproj.AssemblyReference.cache
+C:\Users\TGS050\Desktop\project\CQ-CalcuQuote\CalcuQuote.RabbitMQContract\obj\Debug\net6.0\CalcuQuote.RabbitMQContract.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\TGS050\Desktop\project\CQ-CalcuQuote\CalcuQuote.RabbitMQContract\obj\Debug\net6.0\CalcuQuote.RabbitMQContract.AssemblyInfoInputs.cache
+C:\Users\TGS050\Desktop\project\CQ-CalcuQuote\CalcuQuote.RabbitMQContract\obj\Debug\net6.0\CalcuQuote.RabbitMQContract.AssemblyInfo.cs
+C:\Users\TGS050\Desktop\project\CQ-CalcuQuote\CalcuQuote.RabbitMQContract\obj\Debug\net6.0\CalcuQuote.RabbitMQContract.csproj.CoreCompileInputs.cache
+C:\Users\TGS050\Desktop\project\CQ-CalcuQuote\CalcuQuote.RabbitMQContract\obj\Debug\net6.0\CalcuQuote.RabbitMQContract.dll
+C:\Users\TGS050\Desktop\project\CQ-CalcuQuote\CalcuQuote.RabbitMQContract\obj\Debug\net6.0\refint\CalcuQuote.RabbitMQContract.dll
+C:\Users\TGS050\Desktop\project\CQ-CalcuQuote\CalcuQuote.RabbitMQContract\obj\Debug\net6.0\CalcuQuote.RabbitMQContract.pdb
+C:\Users\TGS050\Desktop\project\CQ-CalcuQuote\CalcuQuote.RabbitMQContract\obj\Debug\net6.0\ref\CalcuQuote.RabbitMQContract.dll

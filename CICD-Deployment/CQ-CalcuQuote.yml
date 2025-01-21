@@ -1,0 +1,539 @@
+# ------ Important Notes ------------
+# There are some optional services is there which are not included in Build Artifact after Build pipeline trigger 
+# If Required to build below services kindly select the => BuildAll
+# (1)CQ_Pricing_Expr  (2)CQ_Currency  (3)CQ_ManEx  (4)CQ_CustomReport  (5)CQ_Webhook  (6)CQ_Maintenance
+# (7)CQ_Service  (8)CQ_Pricing  (9)CQ_Workflow  (10)CQ_QuoteCQAPI_QCQService  (11)CalcuQuoteAPI
+
+# If Required to build only CalcuQuoteAPI kindly select the => BuildOnlyAPI
+# (1)CalcuQuote API
+
+# Default API & Services are => BuildFrequentUsesServices
+# (1)CQ_Service (2)CQ_Pricing (3)CQ_Workflow (4)CQ_QuoteCQAPI_QCQService (5)CalcuQuoteAPI
+
+pool:
+  vmImage: 'windows-latest'
+
+parameters:
+  - name: BuildAll
+    displayName: Build All?
+    type: boolean
+    default: true
+    values:
+      - true
+      - false
+  - name: BuildOnlyAPI
+    displayName: Build Only API?
+    type: boolean
+    default: false
+    values:
+      - true
+      - false
+  - name: CQ_Currency
+    displayName: Build CQ_Currency Service?
+    type: boolean
+    default: false
+    values:
+      - true
+      - false
+  - name: CQ_CustomReport
+    displayName: Build CQ_CustomReport Service?
+    type: boolean
+    default: false
+    values:
+      - true
+      - false
+  - name: CQ_MaintenanceService
+    displayName: Build CQ_MaintenanceService Service?
+    type: boolean
+    default: false
+    values:
+      - true
+      - false
+  - name: CQ_Webhook
+    displayName: Build CQ_Webhook Service?
+    type: boolean
+    default: false
+    values:
+      - true
+      - false
+  - name: CQ_Service
+    displayName: Build CQ_Service Service?
+    type: boolean
+    default: false
+    values:
+      - true
+      - false
+  - name: CQ_Pricing
+    displayName: Build CQ_Pricing Service?
+    type: boolean
+    default: false
+    values:
+      - true
+      - false
+  - name: CQ_Workflow
+    displayName: Build CQ_Workflow Service?
+    type: boolean
+    default: false
+    values:
+      - true
+      - false
+  - name: CQ_QCQService
+    displayName: Build CQ_QCQService Service?
+    type: boolean
+    default: false
+    values:
+      - true
+      - false
+  - name: CQ_ManEX
+    displayName: Build CQ_ManEX Service?
+    type: boolean
+    default: false
+    values:
+      - true
+      - false
+  - name: CQ_PricingExpiration
+    displayName: Build CQ_PricingExpiration Service?
+    type: boolean
+    default: false
+    values:
+      - true
+      - false
+  - name: CQ_ArchiveService
+    displayName: Build CQ_ArchiveService Service?
+    type: boolean
+    default: false
+    values:
+      - true
+      - false
+  - name: CQ_EventWorkerService
+    displayName: Build CQ_EventWorkerService Service?
+    type: boolean
+    default: false
+    values:
+      - true
+      - false
+
+variables:
+  solution: '**/*.sln'
+  buildConfiguration: 'Release'
+
+steps:
+- task: UseDotNet@2
+  inputs:
+    packageType: 'sdk'
+    version: '6.0.x'
+    includePreviewVersions: true
+
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'restore'
+    projects: '$(solution)'
+    feedsToUse: 'select'
+    noCache: true
+
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'build'
+    projects: '$(solution)'
+    arguments: '--configuration $(buildConfiguration)'
+
+# START: WebAPI Project Build
+- task: DotNetCoreCLI@2
+  displayName: Build CalcuQuote.API
+  condition: or( ${{ eq(parameters.BuildAll, true) }}, ${{ eq(parameters.BuildOnlyAPI, true) }})
+  inputs:
+    command: 'publish'
+    publishWebProjects: true
+    arguments: '-r win-x64 --configuration $(buildConfiguration) --output $(Build.ArtifactStagingDirectory)/Web/QuoteCQAPI'
+    zipAfterPublish: false
+    modifyOutputPath: false
+
+- task: CopyFiles@2
+  displayName: Copy API.xml files
+  condition: or( ${{ eq(parameters.BuildAll, true) }}, ${{ eq(parameters.BuildOnlyAPI, true) }})
+  inputs:
+    SourceFolder: '$(Build.SourcesDirectory)/CalcuQuote.API/bin'
+    Contents: |
+      *CalcuQuote.API.xml
+      *CalcuQuote.Core.xml
+    TargetFolder: '$(build.ArtifactStagingDirectory)\Web\QuoteCQAPI\bin'
+    OverWrite: true
+
+- task: CopyFiles@2
+  displayName: Copy IndexPage config file
+  condition: or( ${{ eq(parameters.BuildAll, true) }}, ${{ eq(parameters.BuildOnlyAPI, true) }})
+  inputs:
+    SourceFolder: '$(Build.SourcesDirectory)/CalcuQuote.API/Views'
+    Contents: |
+      *Web.config
+    TargetFolder: '$(build.ArtifactStagingDirectory)\Web\QuoteCQAPI\Views'
+    OverWrite: true
+
+# - task: CopyFiles@2
+#   displayName: Copy Reports folder
+#   inputs:
+#     SourceFolder: '$(Build.SourcesDirectory)/CalcuQuote.API/Reports'
+#     Contents: |
+#       **
+#     TargetFolder: '$(build.ArtifactStagingDirectory)\Web\QuoteCQAPI\Reports'
+#     OverWrite: true
+
+# END: Web Project Build
+- task: DeleteFiles@1
+  displayName: Delete Config Files & Folders
+  condition: or( ${{ eq(parameters.BuildAll, true) }}, ${{ eq(parameters.BuildOnlyAPI, true) }})
+  inputs:
+    SourceFolder: '$(Build.ArtifactStagingDirectory)'
+    Contents: |
+      **/*appsettings.json
+      **/*Log/*
+      **/*Logs/*
+      **/*log4net.config
+
+# START: ZIP All WebAPI's 
+- task: ArchiveFiles@2
+  displayName: Archive CalcuQuote.API
+  condition: or( ${{ eq(parameters.BuildAll, true) }}, ${{ eq(parameters.BuildOnlyAPI, true) }})
+  inputs:
+    rootFolderOrFile: '$(Build.ArtifactStagingDirectory)/Web/QuoteCQAPI'
+    includeRootFolder: false
+    archiveType: 'zip'
+    archiveFile: '$(Build.ArtifactStagingDirectory)/Web/QuoteCQAPI.zip'
+    replaceExistingArchive: true
+
+- task: DeleteFiles@1
+  displayName: Delete All WebAPI Folders
+  condition: or( ${{ eq(parameters.BuildAll, true) }}, ${{ eq(parameters.BuildOnlyAPI, true) }})
+  inputs:
+    SourceFolder: '$(Build.ArtifactStagingDirectory)'
+    Contents: |
+      Web/QuoteCQAPI
+
+# END: ZIP All WebAPI's 
+
+# START: Services's Project Build
+- task: DotNetCoreCLI@2
+  displayName: Build CQService
+  condition: or( ${{ eq(parameters.BuildAll, true) }}, ${{ eq(parameters.CQ_Service, true) }})
+  inputs:
+    command: 'build'
+    projects: 'CQService/CalcuQuote.CQService/CalcuQuote.CQService.csproj'
+    arguments: '-r win-x64 --configuration $(buildConfiguration) --output $(Build.ArtifactStagingDirectory)/ServiceServer/CQ_Service'
+
+- task: DotNetCoreCLI@2
+  displayName: Build CurrencyService
+  condition: or( ${{ eq(parameters.BuildAll, true) }}, ${{ eq(parameters.CQ_Currency, true) }})
+  inputs:
+    projects: 'Services/CalcuQuote.CurrencyService/CalcuQuote.CurrencyService.csproj'
+    command: 'build'
+    arguments: '-r win-x64 --configuration $(buildConfiguration) --output $(Build.ArtifactStagingDirectory)/ServiceServer/CQ_Currency'
+    configuration: '$(buildConfiguration)'
+
+- task: DotNetCoreCLI@2
+  displayName: Build CustomReportService
+  condition: or( ${{ eq(parameters.BuildAll, true) }}, ${{ eq(parameters.CQ_CustomReport, true) }})
+  inputs:
+    projects: 'Services/CalcuQuote.CustomReportService/CalcuQuote.CustomReportService.csproj'
+    command: 'build'
+    configuration: '$(buildConfiguration)'
+    arguments: '-r win-x64 --configuration $(buildConfiguration) --output $(Build.ArtifactStagingDirectory)/ServiceServer/CQ_CustomReport'
+
+- task: DotNetCoreCLI@2
+  displayName: Build ManExService
+  condition: or( ${{ eq(parameters.BuildAll, true) }}, ${{ eq(parameters.CQ_ManEx, true) }})
+  inputs:
+    projects: 'Services/CalcuQuote.ManExService/CalcuQuote.ManExService.csproj'
+    command: 'build'
+    arguments: '-r win-x64 --configuration $(buildConfiguration) --output $(Build.ArtifactStagingDirectory)/PricingServer/CQ_ManEx'
+    configuration: '$(buildConfiguration)'
+
+- task: DotNetCoreCLI@2
+  displayName: Build PricingService
+  condition: or( ${{ eq(parameters.BuildAll, true) }}, ${{ eq(parameters.CQ_Pricing, true) }})
+  inputs:
+    projects: 'Services/CalcuQuote.PricingService/CalcuQuote.PricingService.csproj'
+    command: 'build'
+    configuration: '$(buildConfiguration)'
+    arguments: '-r win-x64 --configuration $(buildConfiguration) --output $(Build.ArtifactStagingDirectory)/PricingServer/CQ_Pricing'
+
+- task: DotNetCoreCLI@2
+  displayName: Build WebhookService
+  condition: or( ${{ eq(parameters.BuildAll, true) }}, ${{ eq(parameters.CQ_Webhook, true) }})
+  inputs:
+    projects: 'Services/CalcuQuote.WebhookService/CalcuQuote.WebhookService.csproj'
+    command: 'build'
+    arguments: '-r win-x64 --configuration $(buildConfiguration) --output $(Build.ArtifactStagingDirectory)/ServiceServer/CQ_Webhook'
+    configuration: '$(buildConfiguration)'
+
+- task: DotNetCoreCLI@2
+  displayName: Build WorkFlowService
+  condition: or( ${{ eq(parameters.BuildAll, true) }}, ${{ eq(parameters.CQ_WorkFlow, true) }})
+  inputs:
+    projects: 'Services/CalcuQuote.WorkFlowService/CalcuQuote.WorkFlowService.csproj'
+    command: 'build'
+    arguments: '-r win-x64 --configuration $(buildConfiguration) --output $(Build.ArtifactStagingDirectory)/ServiceServer/CQ_WorkFlow'
+    configuration: '$(buildConfiguration)'
+
+- task: DotNetCoreCLI@2
+  displayName: Build PricingExpirationService
+  condition: or( ${{ eq(parameters.BuildAll, true) }}, ${{ eq(parameters.CQ_PricingExpiration, true) }})
+  inputs:
+    projects: 'Services/CalcuQuote.PricingExpiration/CalcuQuote.PricingExpiration.csproj'
+    command: 'build'
+    arguments: '-r win-x64 --configuration $(buildConfiguration) --output $(Build.ArtifactStagingDirectory)/PricingServer/CQ_PricingExpiration'
+    configuration: '$(buildConfiguration)'
+
+- task: DotNetCoreCLI@2
+  displayName: Build Archive Service
+  condition: or( ${{ eq(parameters.BuildAll, true) }}, ${{ eq(parameters.CQ_ArchiveService, true) }})
+  inputs:
+    projects: 'Services/CalcuQuote.ArchiveService/CalcuQuote.ArchiveService.csproj'
+    command: 'build'
+    arguments: '-r win-x64 --configuration $(buildConfiguration) --output $(Build.ArtifactStagingDirectory)/PricingServer/CQ_ArchiveService'
+    configuration: '$(buildConfiguration)'
+
+- task: DotNetCoreCLI@2
+  displayName: Build Event Worker Service
+  condition: or( ${{ eq(parameters.BuildAll, true) }}, ${{ eq(parameters.CQ_EventWorkerService, true) }})
+  inputs:
+    projects: 'Services/CalcuQuote.EventWorkerService/CalcuQuote.EventWorkerService.csproj'
+    command: 'build'
+    arguments: '-r win-x64 --configuration $(buildConfiguration) --output $(Build.ArtifactStagingDirectory)/PricingServer/CQ_EventWorkerService'
+    configuration: '$(buildConfiguration)'
+
+- task: DotNetCoreCLI@2
+  displayName: Build QCQService
+  condition: or( ${{ eq(parameters.BuildAll, true) }}, ${{ eq(parameters.CQ_QCQService, true) }})
+  inputs:
+    projects: 'Services/CalcuQuote.QCQService/CalcuQuote.QCQService.csproj'
+    command: 'build'
+    arguments: '-r win-x64 --configuration $(buildConfiguration) --output $(Build.ArtifactStagingDirectory)/ServiceServer/CQ_QuoteCQService'
+    configuration: '$(buildConfiguration)'
+
+- task: DotNetCoreCLI@2
+  displayName: Build MaintenanceService
+  condition: or( ${{ eq(parameters.BuildAll, true) }}, ${{ eq(parameters.CQ_MaintenanceService, true) }})
+  inputs:
+    projects: 'Services/CalcuQuote.MaintenanceService/CalcuQuote.MaintenanceService.csproj'
+    command: 'build'
+    arguments: '-r win-x64 --configuration $(buildConfiguration) --output $(Build.ArtifactStagingDirectory)/ServiceServer/CQ_MaintenanceService'
+    configuration: 'Debug'
+
+# END: Services's Project Build
+
+- task: PowerShell@2
+  inputs:
+    targetType: 'inline'
+    script: |
+        $ServicefileExists = Test-Path -Path "$(Build.ArtifactStagingDirectory)/ServiceServer"
+        Write-Output "##vso[task.setvariable variable=ServiceFileExists]$ServicefileExists"
+
+        if(!$ServicefileExists) 
+        {
+          New-Item -ItemType Directory -Path "$(Build.ArtifactStagingDirectory)/ServiceServer"
+          New-Item -ItemType File  -Path "$(Build.ArtifactStagingDirectory)/ServiceServer/testHJ.zip"
+        }
+
+        $PricingfileExists = Test-Path -Path "$(Build.ArtifactStagingDirectory)/PricingServer"
+        Write-Output "##vso[task.setvariable variable=PricingFileExists]$PricingfileExists"
+        
+        if(!$PricingfileExists) 
+        {
+          New-Item -ItemType Directory -Path "$(Build.ArtifactStagingDirectory)/PricingServer"
+          New-Item -ItemType File  -Path "$(Build.ArtifactStagingDirectory)/PricingServer/testHJ.zip"
+        }
+
+        ECHO "ServicefileExists: $ServicefileExists"
+        ECHO "PricingfileExists: $PricingfileExists"
+    failOnStderr: false
+
+- task: DeleteFiles@1
+  displayName: Delete Config Files & Folders
+  condition: and(succeeded(), ${{ ne(parameters.BuildOnlyAPI, true) }})
+  inputs:
+    SourceFolder: '$(Build.ArtifactStagingDirectory)'
+    Contents: |
+      **/*Log/*
+      **/*Logs/*
+      **/*log4net.config
+
+# START: ZIP All Windows Service's 
+
+- task: ArchiveFiles@2
+  displayName: Archive CQService
+  condition: or( ${{ eq(parameters.BuildAll, true) }}, ${{ eq(parameters.CQ_Service, true) }})
+  inputs:
+    rootFolderOrFile: '$(Build.ArtifactStagingDirectory)/ServiceServer/CQ_Service'
+    includeRootFolder: false
+    archiveType: 'zip'
+    archiveFile: '$(Build.ArtifactStagingDirectory)/ServiceServer/CQ_Service.zip'
+    replaceExistingArchive: true
+
+- task: ArchiveFiles@2
+  displayName: Archive CurrencyService
+  condition: or( ${{ eq(parameters.BuildAll, true) }}, ${{ eq(parameters.CQ_Currency, true) }})
+  inputs:
+    rootFolderOrFile: '$(Build.ArtifactStagingDirectory)/ServiceServer/CQ_Currency'
+    includeRootFolder: false
+    archiveType: 'zip'
+    archiveFile: '$(Build.ArtifactStagingDirectory)/ServiceServer/CQ_Currency.zip'
+    replaceExistingArchive: true
+
+- task: ArchiveFiles@2
+  displayName: Archive CustomReportService
+  condition: or( ${{ eq(parameters.BuildAll, true) }}, ${{ eq(parameters.CQ_CustomReport, true) }})
+  inputs:
+    rootFolderOrFile: '$(Build.ArtifactStagingDirectory)/ServiceServer/CQ_CustomReport'
+    includeRootFolder: false
+    archiveType: 'zip'
+    archiveFile: '$(Build.ArtifactStagingDirectory)/ServiceServer/CQ_CustomReport.zip'
+    replaceExistingArchive: true
+
+- task: ArchiveFiles@2
+  displayName: Archive ManExService
+  condition: or( ${{ eq(parameters.BuildAll, true) }}, ${{ eq(parameters.CQ_ManEx, true) }})
+  inputs:
+    rootFolderOrFile: '$(Build.ArtifactStagingDirectory)/PricingServer/CQ_ManEx'
+    includeRootFolder: false
+    archiveType: 'zip'
+    archiveFile: '$(Build.ArtifactStagingDirectory)/PricingServer/CQ_ManEx.zip'
+    replaceExistingArchive: true
+
+- task: ArchiveFiles@2
+  displayName: Archive PricingService
+  condition: or( ${{ eq(parameters.BuildAll, true) }}, ${{ eq(parameters.CQ_Pricing, true) }})
+  inputs:
+    rootFolderOrFile: '$(Build.ArtifactStagingDirectory)/PricingServer/CQ_Pricing'
+    includeRootFolder: false
+    archiveType: 'zip'
+    archiveFile: '$(Build.ArtifactStagingDirectory)/PricingServer/CQ_Pricing.zip'
+    replaceExistingArchive: true
+
+- task: ArchiveFiles@2
+  displayName: Archive WebhookService
+  condition: or( ${{ eq(parameters.BuildAll, true) }}, ${{ eq(parameters.CQ_Webhook, true) }})
+  inputs:
+    rootFolderOrFile: '$(Build.ArtifactStagingDirectory)/ServiceServer/CQ_Webhook'
+    includeRootFolder: false
+    archiveType: 'zip'
+    archiveFile: '$(Build.ArtifactStagingDirectory)/ServiceServer/CQ_Webhook.zip'
+    replaceExistingArchive: true
+
+- task: ArchiveFiles@2
+  displayName: Archive WorkFlowService
+  condition: or( ${{ eq(parameters.BuildAll, true) }}, ${{ eq(parameters.CQ_WorkFlow, true) }})
+  inputs:
+    rootFolderOrFile: '$(Build.ArtifactStagingDirectory)/ServiceServer/CQ_WorkFlow'
+    includeRootFolder: false
+    archiveType: 'zip'
+    archiveFile: '$(Build.ArtifactStagingDirectory)/ServiceServer/CQ_WorkFlow.zip'
+    replaceExistingArchive: true
+
+- task: ArchiveFiles@2
+  displayName: Archive PricingExpiration
+  condition: or( ${{ eq(parameters.BuildAll, true) }}, ${{ eq(parameters.CQ_PricingExpiration, true) }})
+  inputs:
+    rootFolderOrFile: '$(Build.ArtifactStagingDirectory)/PricingServer/CQ_PricingExpiration'
+    includeRootFolder: false
+    archiveType: 'zip'
+    archiveFile: '$(Build.ArtifactStagingDirectory)/PricingServer/CQ_PricingExpiration.zip'
+    replaceExistingArchive: true
+
+- task: ArchiveFiles@2
+  displayName: Archive CQArchive Service
+  condition: or( ${{ eq(parameters.BuildAll, true) }}, ${{ eq(parameters.CQ_ArchiveService, true) }})
+  inputs:
+    rootFolderOrFile: '$(Build.ArtifactStagingDirectory)/PricingServer/CQ_ArchiveService'
+    includeRootFolder: false
+    archiveType: 'zip'
+    archiveFile: '$(Build.ArtifactStagingDirectory)/PricingServer/CQ_ArchiveService.zip'
+    replaceExistingArchive: true
+
+- task: ArchiveFiles@2
+  displayName: Archive Event Worker Service
+  condition: or( ${{ eq(parameters.BuildAll, true) }}, ${{ eq(parameters.CQ_EventWorkerService, true) }})
+  inputs:
+    rootFolderOrFile: '$(Build.ArtifactStagingDirectory)/PricingServer/CQ_EventWorkerService'
+    includeRootFolder: false
+    archiveType: 'zip'
+    archiveFile: '$(Build.ArtifactStagingDirectory)/PricingServer/CQ_EventWorkerService.zip'
+    replaceExistingArchive: true
+
+- task: ArchiveFiles@2
+  displayName: Archive QuoteCQService
+  condition: or( ${{ eq(parameters.BuildAll, true) }}, ${{ eq(parameters.CQ_QCQService, true) }})
+  inputs:
+    rootFolderOrFile: '$(Build.ArtifactStagingDirectory)/ServiceServer/CQ_QuoteCQService'
+    includeRootFolder: false
+    archiveType: 'zip'
+    archiveFile: '$(Build.ArtifactStagingDirectory)/ServiceServer/CQ_QuoteCQService.zip'
+    replaceExistingArchive: true
+
+- task: ArchiveFiles@2
+  displayName: Archive MaintenanceService
+  condition: or( ${{ eq(parameters.BuildAll, true) }}, ${{ eq(parameters.CQ_MaintenanceService, true) }})
+  inputs:
+    rootFolderOrFile: '$(Build.ArtifactStagingDirectory)/ServiceServer/CQ_MaintenanceService'
+    includeRootFolder: false
+    archiveType: 'zip'
+    archiveFile: '$(Build.ArtifactStagingDirectory)/ServiceServer/CQ_MaintenanceService.zip'
+    replaceExistingArchive: true
+
+- task: CopyFiles@2
+  displayName: Copy Release pipeline script files
+  inputs:
+    SourceFolder: '$(Build.SourcesDirectory)/CICD-Deployment'
+    Contents: |
+      *CQ-Deployment-script.ps1
+      *CQ-DBDeployment-script.ps1
+      *CommonService.ps1
+      *CommonService-EU-GDPR.ps1
+      *PricingService.PS1
+      *EUService.PS1
+      *ItarService.PS1
+      *USService.PS1
+      *PricingService-EU.PS1
+      *PricingService-EU-GDPR.PS1
+      *PricingService-ITAR.PS1
+      *PricingService-US.PS1
+      *CommonServiceNew.PS1
+      *PricingService-EU-GDPR-bkp-Vms.PS1
+      *CommonService-EU-GDPR-bkp-Vms.ps1
+      *EUService-bkp-Vms.ps1
+      *ItarService-bkp-Vms.ps1
+      *PricingService-EU-bkp-Vms.PS1
+      *PricingService-ITAR-bkp-Vms.PS1
+      *PricingService-US-bkp-Vms.PS1
+      *USService-bkp-Vms.ps1
+      *CommonService-UK.ps1
+      *PricingService-UK.PS1
+      *PricingService-US-ENT.PS1
+      *CommonService-US-ENT.ps1
+    TargetFolder: '$(build.ArtifactStagingDirectory)\Script'
+
+#END: ZIP All Web & Windows Service's 
+- task: DeleteFiles@1
+  displayName: Delete All Services Folders
+  condition: or( eq(variables['ServiceFileExists'], True), eq(variables['PricingFileExists'], True))
+  inputs:
+    SourceFolder: '$(Build.ArtifactStagingDirectory)'
+    Contents: |
+      ServiceServer/CQ_Service
+      ServiceServer/CQ_Currency
+      ServiceServer/CQ_CustomReport
+      ServiceServer/CQ_Webhook
+      ServiceServer/CQ_WorkFlow
+      ServiceServer/CQ_WorkFlowapp.publish
+      ServiceServer/CQ_QuoteCQService
+      ServiceServer/CQ_MaintenanceService
+      PricingServer/CQ_ManEx
+      PricingServer/CQ_Pricing
+      PricingServer/CQ_PricingExpiration
+      PricingServer/CQ_ArchiveService
+      PricingServer/CQ_EventWorkerService
+
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: 'drop'
+    publishLocation: 'Container'
